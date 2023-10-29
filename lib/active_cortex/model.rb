@@ -14,12 +14,23 @@ module ActiveCortex::Model
   private
 
   def generate_content_for_field(field, prompt: nil)
+    content = case prompt
+              when Symbol then send(prompt)
+              when Proc then prompt.call(self)
+              else
+                raise ActiveCortex::Error, "prompt must be a symbol or a proc"
+              end
+
+    query_chatgpt_with(content)
+  rescue => e
+    raise ActiveCortex::Error, e.message
+  end
+
+  def query_chatgpt_with(content)
     openai_client.chat(parameters: {
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: prompt.call(self) }], 
+      messages: [{ role: "user", content: content }], 
     })["choices"][0]["message"]["content"]
-  rescue
-    raise ActiveCortex::Error
   end
 
   def openai_client

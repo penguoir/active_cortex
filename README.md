@@ -10,6 +10,14 @@ class Document < ApplicationRecord
   include ActiveCortex::Model
 
   ai_generated :summary, prompt: -> (doc) { "Summarize: #{doc.text}" }
+  # (or)
+  ai_generated :summary, prompt: :generate_summary_prompt
+
+  private
+
+  def generate_summary_prompt
+     "Summarize: #{text}"
+  end
 end
 
 # ... then ...

@@ -31,6 +31,24 @@ class ModelTest < ActiveSupport::TestCase
     end
   end
 
+  test "can provide a method name as a prompt" do
+    class DocumentWithSymbolPrompt < Document
+      ai_generated :summary, prompt: :generate_summary_prompt
+
+      private
+
+      def generate_summary_prompt
+        "Summarize: #{text}"
+      end
+    end
+
+    @doc = DocumentWithSymbolPrompt.new(text: "ABC")
+
+    assert_nil @doc.summary
+    @doc.generate_summary!
+    assert_equal "response for Summarize: ABC", @doc.summary
+  end
+
   private
 
   def stub_chatgpt(with: nil)

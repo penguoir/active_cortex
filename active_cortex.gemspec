@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
-  spec.add_dependency "rails", ">= 7.0.8"
-  spec.add_dependency "dry-configurable", ">= 1.0"
-  spec.add_dependency "ruby-openai", ">= 5.1"
+  spec.add_dependency "rails", "~> 7.0.8"
+  spec.add_dependency "dry-configurable", "~> 1.0"
+  spec.add_dependency "ruby-openai", "~> 5.1"
 end

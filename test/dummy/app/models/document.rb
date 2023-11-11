@@ -4,7 +4,7 @@ class Document < ApplicationRecord
   has_many :reviews
 
   ai_generated :summary, prompt: -> (doc) { "Summarize: #{doc.text}" }
-  ai_generated :reviews, prompt: :reviews_prompt
+  ai_generated :reviews, prompt: :reviews_prompt, max_results: 3
 
   private
 

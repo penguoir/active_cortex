@@ -4,10 +4,10 @@ module ActiveCortex::Model
   extend ActiveSupport::Concern
 
   class_methods do
-    def ai_generated(field, prompt: nil)
+    def ai_generated(field, prompt: nil, max_results: nil)
       define_method("generate_#{field}!") do
         if self.class.reflect_on_association(field)&.collection?
-          result = generate_has_many(field, prompt: prompt)
+          result = generate_has_many(field, prompt: prompt, max_results: max_results)
           self.send(field).push(result)
         else
           self.send("#{field}=", generate_content_for_field(field, prompt:))
@@ -18,7 +18,7 @@ module ActiveCortex::Model
 
   private
 
-  def generate_has_many(field, prompt: nil, results: [])
+  def generate_has_many(field, prompt: nil, results: [], max_results: nil)
     content = case prompt
               when Symbol then send(prompt)
               when Proc then prompt.call(self)
@@ -76,10 +76,10 @@ module ActiveCortex::Model
     attrs = JSON.parse(args)
     results << attrs
 
-    if results.count >= 3 # TODO: end condition
+    if results.count >= max_results
       results.map { |attrs| klass.new(attrs) }
     else
-      generate_has_many(field, prompt: prompt, results: results)
+      generate_has_many(field, prompt: prompt, results: results, max_results: max_results)
     end
   end
 

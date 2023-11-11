@@ -89,6 +89,25 @@ class GenerateHasManyTest < ActiveSupport::TestCase
     assert_equal 3, @doc.reviews.size
   end
 
+  test "custom model" do
+    class DocumentWithCustomModelToGenerateFields < Document
+      ai_generated :reviews,
+        prompt: :reviews_prompt,
+        max_results: 3,
+        model: "curie:ft-user-review"
+    end
+
+    @doc = DocumentWithCustomModelToGenerateFields.new(text: "ABC")
+
+    stub_generating_reviews do
+      @doc.generate_reviews!
+    end
+
+    assert_requested(:post, "https://api.openai.com/v1/chat/completions") { |req|
+      JSON.parse(req.body)["model"] == "curie:ft-user-review"
+    }
+  end
+
   private
 
   def stub_generating_reviews

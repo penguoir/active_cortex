@@ -4,13 +4,13 @@ module ActiveCortex::Model
   extend ActiveSupport::Concern
 
   class_methods do
-    def ai_generated(field, prompt: nil, max_results: nil)
+    def ai_generated(field, prompt: nil, max_results: nil, model: DEFAULT_MODEL)
       define_method("generate_#{field}!") do
         if self.class.reflect_on_association(field)&.collection?
-          result = generate_has_many(field, prompt: prompt, max_results: max_results)
+          result = generate_has_many(field, prompt: prompt, max_results: max_results, model: model)
           self.send(field).push(result)
         else
-          self.send("#{field}=", generate_content_for_field(field, prompt:))
+          self.send("#{field}=", generate_content_for_field(field, prompt:, model: model))
         end
       end
     end
@@ -18,7 +18,9 @@ module ActiveCortex::Model
 
   private
 
-  def generate_has_many(field, prompt: nil, results: [], max_results: nil)
+  DEFAULT_MODEL = "gpt-3.5-turbo"
+
+  def generate_has_many(field, prompt: nil, results: [], max_results: nil, model: nil)
     content = case prompt
               when Symbol then send(prompt)
               when Proc then prompt.call(self)
@@ -29,7 +31,7 @@ module ActiveCortex::Model
     klass = self.class.reflect_on_association(field).klass
 
     res = openai_client.chat(parameters: {
-      model: "gpt-3.5-turbo-1106",
+      model: model,
       messages: [
         { role: "user", content: content },
         *results.map do |result_arguments|
@@ -94,7 +96,7 @@ module ActiveCortex::Model
     end
   end
 
-  def generate_content_for_field(field, prompt: nil)
+  def generate_content_for_field(field, prompt: nil, model: nil)
     content = case prompt
               when Symbol then send(prompt)
               when Proc then prompt.call(self)
@@ -102,14 +104,14 @@ module ActiveCortex::Model
                 raise ActiveCortex::Error, "prompt must be a symbol or a proc"
               end
 
-    query_chatgpt_with(content)
+    query_chatgpt_with(content, model: model)
   rescue => e
     raise ActiveCortex::Error, e.message
   end
 
-  def query_chatgpt_with(content)
+  def query_chatgpt_with(content, model: nil)
     openai_client.chat(parameters: {
-      model: "gpt-3.5-turbo",
+      model: model,
       messages: [{ role: "user", content: content }], 
     })["choices"][0]["message"]["content"]
   end

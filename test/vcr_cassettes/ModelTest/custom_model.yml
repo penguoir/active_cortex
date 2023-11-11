@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4","messages":[{"role":"user","content":"Summarize: ABC"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 12:43:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-4-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '2539'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '10000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '9979'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 126ms
+      X-Request-Id:
+      - 22735a886f1c0917bef77be339cc2cc9
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=l50PMnA4rkQUF2id_iyttl4nVZWV6hfJK6zNI1k8qfY-1699706582-0-Ac7OQHv42yrFtEtdHZkOLymzmtgxf6b4QBtOSIZ5LTppFCtRy+m5BYQfIqd7v/8QlY6/BPWzZWZNtX0+LhazNPQ=;
+        path=/; expires=Sat, 11-Nov-23 13:13:02 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82469e49bc2475d8-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8JhcBRg2HrnCMZNqULeXaWD9Ts1zm",
+          "object": "chat.completion",
+          "created": 1699706579,
+          "model": "gpt-4-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "You did not provide any specific information about ABC. Please provide more details such as whether you're referring to the American Broadcasting Company, the alphabet letters ABC, a business concept, a band, or any other detail related to ABC."
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 12,
+            "completion_tokens": 46,
+            "total_tokens": 58
+          }
+        }
+  recorded_at: Sat, 11 Nov 2023 12:43:02 GMT
+recorded_with: VCR 6.2.0

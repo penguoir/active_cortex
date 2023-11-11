@@ -61,6 +61,22 @@ class ModelTest < ActiveSupport::TestCase
     end
   end
 
+  test "custom model" do
+    class DocumentWithCustomModel < Document
+      ai_generated :summary, prompt: -> (doc) { "Summarize: #{doc.text}" }, model: "gpt-4"
+    end
+
+    @doc = DocumentWithCustomModel.new(text: "ABC")
+
+    VCR.use_cassette("ModelTest/custom_model") do
+      @doc.generate_summary!
+    end
+
+    assert_requested(:post, "https://api.openai.com/v1/chat/completions") { |req|
+      JSON.parse(req.body)["model"] == "gpt-4"
+    }
+  end
+
   private
 
   def stub_chatgpt(with: nil)
@@ -95,5 +111,4 @@ class ModelTest < ActiveSupport::TestCase
         ]
       }.to_json, headers: {})
   end
-
 end

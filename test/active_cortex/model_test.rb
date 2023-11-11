@@ -1,8 +1,9 @@
 require "test_helper"
 
 class ModelTest < ActiveSupport::TestCase
+  include WithVCR
+
   setup do
-    stub_chatgpt
     @doc = Document.new(text: "ABC")
   end
 
@@ -13,18 +14,17 @@ class ModelTest < ActiveSupport::TestCase
   test "it adds #generate_[ai_field]" do
     assert_nil @doc.summary
     assert_respond_to @doc, :generate_summary!
-    @doc.generate_summary!
+
+    with_expiring_vcr_cassette do
+      @doc.generate_summary!
+    end
+
     assert_predicate @doc.summary, :present?
   end
 
-  test "generate_summary! queries ChatGPT with the provided prompt" do
-    assert_nil @doc.summary
-    @doc.generate_summary!
-    assert_equal "response for Summarize: ABC", @doc.summary
-  end
-
   test "generate_summary! raises an error on fail" do
-    stub_chatgpt(with: 500)
+    stub_request(:post, "https://api.openai.com/v1/chat/completions")
+      .to_return(status: 500, body: {}.to_json, headers: {})
 
     assert_raises ActiveCortex::Error do
       @doc.generate_summary!
@@ -45,8 +45,12 @@ class ModelTest < ActiveSupport::TestCase
     @doc = DocumentWithSymbolPrompt.new(text: "ABC")
 
     assert_nil @doc.summary
-    @doc.generate_summary!
-    assert_equal "response for Summarize: ABC", @doc.summary
+
+    with_expiring_vcr_cassette do
+      @doc.generate_summary!
+    end
+
+    assert_predicate @doc.summary, :present?
   end
 
   test "raises an error if the prompt is not a symbol or a proc" do
@@ -75,40 +79,5 @@ class ModelTest < ActiveSupport::TestCase
     assert_requested(:post, "https://api.openai.com/v1/chat/completions") { |req|
       JSON.parse(req.body)["model"] == "gpt-4"
     }
-  end
-
-  private
-
-  def stub_chatgpt(with: nil)
-    if with == 500
-      stub_request(:post, "https://api.openai.com/v1/chat/completions")
-        .to_return(status: 500, body: {}.to_json, headers: {})
-
-      return
-    end
-
-    stub_request(:post, "https://api.openai.com/v1/chat/completions")
-      .with({
-        body: {
-          model: "gpt-3.5-turbo",
-          messages: [{
-            role: "user",
-            content: "Summarize: ABC"
-          }]
-        }.to_json,
-        headers: {
-	  'Accept'=>'*/*',
-	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'Authorization'=>"Bearer #{ActiveCortex.config.openai_access_token}",
-	  'Content-Type'=>'application/json',
-	  'User-Agent'=>'Ruby'
-        }
-      }).to_return(status: 200, body: {
-        choices: [
-          message: {
-            content: "response for Summarize: ABC"
-          }
-        ]
-      }.to_json, headers: {})
   end
 end

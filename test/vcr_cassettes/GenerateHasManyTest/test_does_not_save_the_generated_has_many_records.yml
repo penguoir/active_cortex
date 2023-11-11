@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 Nov 2023 11:26:21 GMT
+      - Sat, 11 Nov 2023 13:09:27 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '2705'
+      - '2673'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -59,26 +59,26 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 22ms
       X-Request-Id:
-      - 0a4af6750021254992d30c38194bc55d
+      - df6002a74390dcefd2464eb8e8f1d96e
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=HOWYDbpai09SaygiHjpHNwzJRp7px7UN57GUDp25Ukg-1699701981-0-AY5yAG6B747WKhaj6EYAi8OI4BxUTZBq4+KdYmn1GLn02R607bFKCRlZd2jVVx8UVX/4H+ri1s8PP5CCszJ4lO4=;
-        path=/; expires=Sat, 11-Nov-23 11:56:21 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=k2AuDKMeLFQnfjEB_xwPcYrX6QX_xB0qLeHZFmELgOc-1699708167-0-AYyzyI5wUD2mFcUCDJkZEG3rXCTwMBOcQz/AxWo1ZuB2gMb1Ky92tF8WNgTSQodMyUK+WF96brMOaUzhVYPwYMM=;
+        path=/; expires=Sat, 11-Nov-23 13:39:27 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 82462df7d98d4195-LHR
+      - 8246c4fdbe2076d5-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8JgPz16XAti5BvXob7XEe0TYrldlP",
+          "id": "chatcmpl-8Ji1k0MhbNcHC4hWTHod6rpqFJYl9",
           "object": "chat.completion",
-          "created": 1699701979,
+          "created": 1699708164,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -88,11 +88,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_SEmVVqucoqVUKhnWZmArLTtG",
+                    "id": "call_k6UzGTUZHJfrVvs0PjiYfSAS",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\n  \"rating\": \"5\",\n  \"text\": \"Excellent summary, very clear and concise.\"\n}"
+                      "arguments": "{\n  \"rating\": \"5\",\n  \"text\": \"The document was very informative and well-written.\"\n}"
                     }
                   }
                 ]
@@ -102,19 +102,19 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 59,
-            "completion_tokens": 28,
-            "total_tokens": 87
+            "completion_tokens": 29,
+            "total_tokens": 88
           }
         }
-  recorded_at: Sat, 11 Nov 2023 11:26:21 GMT
+  recorded_at: Sat, 11 Nov 2023 13:09:27 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
       string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"rating\":\"5\",\"text\":\"Excellent
-        summary, very clear and concise.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"call_k6UzGTUZHJfrVvs0PjiYfSAS","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
+        \"5\",\n  \"text\": \"The document was very informative and well-written.\"\n}"}}]},{"tool_call_id":"call_k6UzGTUZHJfrVvs0PjiYfSAS","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
         a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
     headers:
       Content-Type:
@@ -133,7 +133,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 Nov 2023 11:26:24 GMT
+      - Sat, 11 Nov 2023 13:09:31 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -149,7 +149,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '2484'
+      - '3458'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -167,26 +167,26 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 24ms
       X-Request-Id:
-      - 9f5bbba0ff63e952bab17ccc064094e0
+      - 9a8f06bc385bf1cba34c5ba1b06de6bd
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=kGkSQDWIxY_E__.LnpG0jdbKxY61hdvWkMrd9qXMx.A-1699701984-0-AV3NM5fATm1jKz8m+zd5TL344Gq/YODo4ffhzmIYntWzzoafUrx9qN5+Ex7sf/qzusqx1JkhRWz9qpHjmfyCIhQ=;
-        path=/; expires=Sat, 11-Nov-23 11:56:24 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=Vs5.sSbFZrG.EKkMa681uob7AA.9jvQipsDPLWHfJNE-1699708171-0-AYQEUytrCyTpVx+L94Wwj+wn7kFtR7K71ZKxE21oCY+6gylpfagQBaldCZ3IDacllntKAa0YrFXskmZLrSeGtTE=;
+        path=/; expires=Sat, 11-Nov-23 13:39:31 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 82462e0b1f806353-LHR
+      - 8246c5109a9723ba-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8JgQ2C0lvwn4llgBDL2hZ944tXzWS",
+          "id": "chatcmpl-8Ji1onTa680jtiIfcMAAzjDORk6z8",
           "object": "chat.completion",
-          "created": 1699701982,
+          "created": 1699708168,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -196,11 +196,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_8ZBDx6i36ObI72A9q3YOySQO",
+                    "id": "call_3chTNTZK5g4GESOYL4Mxtlj0",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\"rating\":\"4\",\"text\":\"Overall good, but some parts could be explained better.\"}"
+                      "arguments": "{\n  \"rating\": \"4\",\n  \"text\": \"I found the document to be useful, but some parts were a bit confusing.\"\n}"
                     }
                   }
                 ]
@@ -209,21 +209,22 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 90,
-            "completion_tokens": 25,
-            "total_tokens": 115
+            "prompt_tokens": 97,
+            "completion_tokens": 36,
+            "total_tokens": 133
           }
         }
-  recorded_at: Sat, 11 Nov 2023 11:26:24 GMT
+  recorded_at: Sat, 11 Nov 2023 13:09:31 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
       string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"rating\":\"5\",\"text\":\"Excellent
-        summary, very clear and concise.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"rating\":\"4\",\"text\":\"Overall
-        good, but some parts could be explained better.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"call_k6UzGTUZHJfrVvs0PjiYfSAS","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
+        \"5\",\n  \"text\": \"The document was very informative and well-written.\"\n}"}}]},{"tool_call_id":"call_k6UzGTUZHJfrVvs0PjiYfSAS","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_3chTNTZK5g4GESOYL4Mxtlj0","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
+        \"4\",\n  \"text\": \"I found the document to be useful, but some parts were
+        a bit confusing.\"\n}"}}]},{"tool_call_id":"call_3chTNTZK5g4GESOYL4Mxtlj0","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
         a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
     headers:
       Content-Type:
@@ -242,7 +243,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 Nov 2023 11:26:27 GMT
+      - Sat, 11 Nov 2023 13:09:35 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -258,7 +259,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '2558'
+      - '3275'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -276,26 +277,26 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 25ms
       X-Request-Id:
-      - 3b28d5d77a7f7186721a9c5de46ab86a
+      - 1bdb4c9cfed1d8b62f06aa78e7a7935f
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=ikDiyDAJ.EqmEo4E1n07MHonp.URr6dvdvhbyaSLGH0-1699701987-0-Aar7O/cMqr7zkOOJ1ZFxuy7z347lS1svUKg1Spaf3ldBAxt1RUPk+CJF83O/FHJBfFTIhI9Wgf676c8Bh7a43mE=;
-        path=/; expires=Sat, 11-Nov-23 11:56:27 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=32gz.47xv3aB_YB8BFrYKrZscfLwJmVqY.O3y8nHXL4-1699708175-0-AW6ixNPEGQvPZIJKklD/KowpQU4OOPh4MnHyvc5ayb+VtTxFta1vMtyND21StAn0eSpFOPr/7oP6Hz82XUvTLnI=;
+        path=/; expires=Sat, 11-Nov-23 13:39:35 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 82462e1d5d6c406c-LHR
+      - 8246c5293d3563b5-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8JgQ5YWO7lZ4YG4y5AeV0tbA0YFeu",
+          "id": "chatcmpl-8Ji1rkkeviy9V1W8wSKybPronk4Vj",
           "object": "chat.completion",
-          "created": 1699701985,
+          "created": 1699708171,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -305,11 +306,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_GZg6so1Cvzevq6IwGsTMHnQ1",
+                    "id": "call_4MkLbeDPrYYQi8G4ySXrZdRa",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\"rating\":\"3\",\"text\":\"Average summary, needs more detail and examples.\"}"
+                      "arguments": "{\n  \"rating\": \"3\",\n  \"text\": \"The document had some good information, but it could have been better organized.\"\n}"
                     }
                   }
                 ]
@@ -318,10 +319,10 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 124,
-            "completion_tokens": 23,
-            "total_tokens": 147
+            "prompt_tokens": 142,
+            "completion_tokens": 35,
+            "total_tokens": 177
           }
         }
-  recorded_at: Sat, 11 Nov 2023 11:26:27 GMT
+  recorded_at: Sat, 11 Nov 2023 13:09:35 GMT
 recorded_with: VCR 6.2.0

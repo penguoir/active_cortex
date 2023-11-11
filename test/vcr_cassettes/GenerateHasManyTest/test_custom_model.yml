@@ -5,7 +5,9 @@ http_interactions:
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-4","messages":[{"role":"user","content":"Summarize: ABC"}]}'
+      string: '{"model":"gpt-4","messages":[{"role":"user","content":"Register three
+        reviews for the following summary of a document: "}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
     headers:
       Content-Type:
       - application/json
@@ -23,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 Nov 2023 13:09:37 GMT
+      - Sat, 11 Nov 2023 13:14:39 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -39,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '2323'
+      - '2036'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -51,48 +53,48 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '9979'
+      - '9967'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 126ms
+      - 198ms
       X-Request-Id:
-      - 01de2e47f9da199ec06519fcf9be66c8
+      - 90ef5d17bb903963763c0fe6dd8babaa
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=rVIVd7G_0PRcQ9NsXN5HE1qKwnPtc5lK.cvet41iYWg-1699708177-0-AQ3fAhi7fF0eyySuDSGUfYZ7yhSYTthwxFGOiJ3Qi6aWHhYVUFRRJQdOBKSEXMwCFSDLpbSC1E2XMfcBIpWNelE=;
-        path=/; expires=Sat, 11-Nov-23 13:39:37 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=XYdDywIcFNC4Cv7Cr169RYS6wFawJWcSdfRdb8JuL1M-1699708479-0-AeJ3FouE8VVLqVKJzIg3DnG20huKgS2dxfe/Fk2tJ6+tUCujo8bgT46E9wFLWxXc/Ejpz8ghqxegvlUHcXZNgT0=;
+        path=/; expires=Sat, 11-Nov-23 13:44:39 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 8246c5408c4a71fe-LHR
+      - 8246cc9e0a2b23c6-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8Ji1vDwba8etCRLcZu0UtNi15Dmoa",
+          "id": "chatcmpl-8Ji6nshsC5YSffbw8cG37z2NqtBLn",
           "object": "chat.completion",
-          "created": 1699708175,
+          "created": 1699708477,
           "model": "gpt-4-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "As an AI, I need more context in order to provide a summary. ABC can refer to the American Broadcasting Company, Australian Broadcasting Corporation, a basic principle, or other topics. Please provide more information."
+                "content": "Sure, can you provide the actual summaries or any information you want me to use in the reviews?"
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
-            "prompt_tokens": 12,
-            "completion_tokens": 41,
-            "total_tokens": 53
+            "prompt_tokens": 59,
+            "completion_tokens": 21,
+            "total_tokens": 80
           }
         }
-  recorded_at: Sat, 11 Nov 2023 13:09:37 GMT
+  recorded_at: Sat, 11 Nov 2023 13:14:39 GMT
 recorded_with: VCR 6.2.0

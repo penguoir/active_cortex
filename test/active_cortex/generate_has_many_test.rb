@@ -1,6 +1,8 @@
 require "test_helper"
 
 class GenerateHasManyTest < ActiveSupport::TestCase
+  include WithVCR
+
   setup do
     @doc = Document.new(text: "ABC")
   end
@@ -8,19 +10,19 @@ class GenerateHasManyTest < ActiveSupport::TestCase
   test "generates has_many" do
     assert_empty @doc.reviews
 
-    stub_generating_reviews do
+    with_expiring_vcr_cassette do
       assert_no_difference "Review.count" do
         @doc.generate_reviews!
       end
     end
 
     assert_equal 3, @doc.reviews.size
-    assert_equal "Excellent summary, very clear and concise.", @doc.reviews[0].text
+    assert_operator @doc.reviews[0].text.size, :>, 10
     assert_equal 5, @doc.reviews[0].rating
   end
 
   test "does not save the generated has_many records" do
-    stub_generating_reviews do
+    with_expiring_vcr_cassette do
       assert_no_difference "Review.count" do
         @doc.generate_reviews!
       end
@@ -36,7 +38,7 @@ class GenerateHasManyTest < ActiveSupport::TestCase
 
     @doc = DocumentWithOneReview.new(text: "ABC")
 
-    stub_generating_reviews do
+    with_expiring_vcr_cassette do
       @doc.generate_reviews!
     end
 
@@ -52,7 +54,7 @@ class GenerateHasManyTest < ActiveSupport::TestCase
 
     @doc = DocumentWithNoLimit.new(text: "ABC")
 
-    stub_generating_reviews_with_no_limit do
+    with_expiring_vcr_cassette do
       @doc.generate_reviews!
     end
   end
@@ -66,7 +68,7 @@ class GenerateHasManyTest < ActiveSupport::TestCase
 
     @doc = DocumentWithParallelReviewGeneration.new(text: "ABC")
 
-    stub_generating_reviews_in_parallel do
+    with_expiring_vcr_cassette do
       @doc.generate_reviews!
     end
 
@@ -82,7 +84,7 @@ class GenerateHasManyTest < ActiveSupport::TestCase
 
     @doc = DocumentWithParallelReviewGeneration.new(text: "The chicken crossed the road.")
 
-    stub_generating_reviews_with_no_limit_in_parallel do
+    with_expiring_vcr_cassette do
       @doc.generate_reviews!
     end
 
@@ -94,43 +96,17 @@ class GenerateHasManyTest < ActiveSupport::TestCase
       ai_generated :reviews,
         prompt: :reviews_prompt,
         max_results: 3,
-        model: "curie:ft-user-review"
+        model: "gpt-4" # Not the default model
     end
 
     @doc = DocumentWithCustomModelToGenerateFields.new(text: "ABC")
 
-    stub_generating_reviews do
+    with_expiring_vcr_cassette do
       @doc.generate_reviews!
     end
 
     assert_requested(:post, "https://api.openai.com/v1/chat/completions") { |req|
-      JSON.parse(req.body)["model"] == "curie:ft-user-review"
+      JSON.parse(req.body)["model"] == "gpt-4"
     }
-  end
-
-  private
-
-  def stub_generating_reviews
-    VCR.use_cassette("GenerateHasManyTest/generates_three_reviews") do
-      yield
-    end
-  end
-
-  def stub_generating_reviews_with_no_limit
-    VCR.use_cassette("GenerateHasManyTest/generates_three_reviews_with_no_limit") do
-      yield
-    end
-  end
-
-  def stub_generating_reviews_in_parallel
-    VCR.use_cassette("GenerateHasManyTest/generates_three_reviews_in_parallel") do
-      yield
-    end
-  end
-
-  def stub_generating_reviews_with_no_limit_in_parallel
-    VCR.use_cassette("GenerateHasManyTest/generates_three_reviews_with_no_limit_in_parallel") do
-      yield
-    end
   end
 end

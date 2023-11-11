@@ -20,7 +20,7 @@ module ActiveCortex::Model
 
   DEFAULT_MODEL = "gpt-3.5-turbo"
 
-  def generate_has_many(field, prompt: nil, results: [], max_results: nil, model: nil)
+  def generate_has_many(field, prompt: nil, tool_calls: [], max_results: nil, model:)
     content = case prompt
               when Symbol then send(prompt)
               when Proc then prompt.call(self)
@@ -34,24 +34,16 @@ module ActiveCortex::Model
       model: model,
       messages: [
         { role: "user", content: content },
-        *results.map do |result_arguments|
+        *tool_calls.map do |tool_call|
           [{
             role: "assistant",
             content: nil,
-            tool_calls: [{
-              id: "TODO",
-              type: "function",
-              function: {
-                name: "register_#{klass.name.singularize.underscore}",
-                arguments: result_arguments.to_json,
-              },
-              finish_reason: "tool_calls",
-            }]
+            tool_calls: [tool_call]
           },
           {
-            tool_call_id: "TODO",
+            tool_call_id: tool_call["id"],
             role: "tool",
-            name: "register_#{klass.name.singularize.underscore}",
+            name: tool_call["function"]["name"],
             content: "OK",
           }]
         end.flatten
@@ -77,26 +69,37 @@ module ActiveCortex::Model
 
     # Break when there is no tool call
     if res["choices"][0]["message"]["tool_calls"].blank?
-      return results.map { |attrs| klass.new(attrs) } 
+      return tool_calls.map do |tool_call|
+        attrs_json = tool_call["function"]["arguments"]
+        attrs = JSON.parse(attrs_json)
+
+        if attrs.is_a?(Array)
+          attrs.map { |a| klass.new(a) }
+        else
+          klass.new(attrs)
+        end
+      end
     end
 
-    tool_calls = res["choices"][0]["message"]["tool_calls"]
+    tool_calls += res["choices"][0]["message"]["tool_calls"]
 
-    # Add each tool call as a result
-    tool_calls.each do |tool_call|
-      attrs_json = tool_call["function"]["arguments"]
-      attrs = JSON.parse(attrs_json)
-      results << attrs
-    end
+    if max_results && tool_calls.count >= max_results
+      return tool_calls.map do |tool_call|
+        attrs_json = tool_call["function"]["arguments"]
+        attrs = JSON.parse(attrs_json)
 
-    if max_results && results.count >= max_results
-      results.map { |attrs| klass.new(attrs) }
+        if attrs.is_a?(Array)
+          attrs.map { |a| klass.new(a) }
+        else
+          klass.new(attrs)
+        end
+      end
     else
-      generate_has_many(field, prompt: prompt, results: results, max_results: max_results)
+      generate_has_many(field, prompt: prompt, tool_calls: tool_calls, max_results: max_results, model: model)
     end
   end
 
-  def generate_content_for_field(field, prompt: nil, model: nil)
+  def generate_content_for_field(field, prompt: nil, model:)
     content = case prompt
               when Symbol then send(prompt)
               when Proc then prompt.call(self)
@@ -109,7 +112,7 @@ module ActiveCortex::Model
     raise ActiveCortex::Error, e.message
   end
 
-  def query_chatgpt_with(content, model: nil)
+  def query_chatgpt_with(content, model:)
     openai_client.chat(parameters: {
       model: model,
       messages: [{ role: "user", content: content }], 

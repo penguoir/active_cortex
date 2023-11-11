@@ -77,7 +77,7 @@ And set an OpenAI key
 
 ```ruby
 # config/initializers/active_cortex.rb
-ActiveCortex.config.openai_key = ENV.fetch("OPENAI_ACCESS_TOKEN")
+ActiveCortex.config.openai_access_token = ENV.fetch("OPENAI_ACCESS_TOKEN")
 ```
 
 ## Contributing

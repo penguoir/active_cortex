@@ -49,6 +49,18 @@ class ModelTest < ActiveSupport::TestCase
     assert_equal "response for Summarize: ABC", @doc.summary
   end
 
+  test "raises an error if the prompt is not a symbol or a proc" do
+    class DocumentWithInvalidPrompt < Document
+      ai_generated :summary, prompt: "invalid"
+    end
+
+    @doc = DocumentWithInvalidPrompt.new(text: "ABC")
+
+    assert_raises ActiveCortex::Error do
+      @doc.generate_summary!
+    end
+  end
+
   private
 
   def stub_chatgpt(with: nil)

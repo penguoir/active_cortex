@@ -9,7 +9,6 @@ class ActiveCortexTest < ActiveSupport::TestCase
 
   test "it is configurable" do
     before = ActiveCortex.config.openai_access_token
-    assert_equal "openai-access-token-placeholder", before
 
     ActiveCortex.config.openai_access_token = "test"
     assert_equal "test", ActiveCortex.config.openai_access_token

@@ -15,5 +15,14 @@ end
 
 require "minitest/mock"
 require 'webmock/minitest'
+require 'vcr'
 
-ActiveCortex.config.openai_access_token = "openai-access-token-placeholder"
+Dotenv.load!
+ActiveCortex.config.openai_access_token = ENV.fetch("OPENAI_ACCESS_TOKEN")
+
+VCR.configure do |config|
+  config.cassette_library_dir = "test/vcr_cassettes"
+  config.hook_into :webmock
+
+  config.filter_sensitive_data("<OPENAI_ACCESS_TOKEN>") { ENV.fetch("OPENAI_ACCESS_TOKEN") }
+end

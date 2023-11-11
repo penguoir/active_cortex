@@ -1,0 +1,327 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the following summary of a document: "}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 11:26:21 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '2705'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89967'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - 0a4af6750021254992d30c38194bc55d
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=HOWYDbpai09SaygiHjpHNwzJRp7px7UN57GUDp25Ukg-1699701981-0-AY5yAG6B747WKhaj6EYAi8OI4BxUTZBq4+KdYmn1GLn02R607bFKCRlZd2jVVx8UVX/4H+ri1s8PP5CCszJ4lO4=;
+        path=/; expires=Sat, 11-Nov-23 11:56:21 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82462df7d98d4195-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8JgPz16XAti5BvXob7XEe0TYrldlP",
+          "object": "chat.completion",
+          "created": 1699701979,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_SEmVVqucoqVUKhnWZmArLTtG",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\n  \"rating\": \"5\",\n  \"text\": \"Excellent summary, very clear and concise.\"\n}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 59,
+            "completion_tokens": 28,
+            "total_tokens": 87
+          }
+        }
+  recorded_at: Sat, 11 Nov 2023 11:26:21 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"rating\":\"5\",\"text\":\"Excellent
+        summary, very clear and concise.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 11:26:24 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '2484'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89964'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 24ms
+      X-Request-Id:
+      - 9f5bbba0ff63e952bab17ccc064094e0
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=kGkSQDWIxY_E__.LnpG0jdbKxY61hdvWkMrd9qXMx.A-1699701984-0-AV3NM5fATm1jKz8m+zd5TL344Gq/YODo4ffhzmIYntWzzoafUrx9qN5+Ex7sf/qzusqx1JkhRWz9qpHjmfyCIhQ=;
+        path=/; expires=Sat, 11-Nov-23 11:56:24 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82462e0b1f806353-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8JgQ2C0lvwn4llgBDL2hZ944tXzWS",
+          "object": "chat.completion",
+          "created": 1699701982,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_8ZBDx6i36ObI72A9q3YOySQO",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\"rating\":\"4\",\"text\":\"Overall good, but some parts could be explained better.\"}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 90,
+            "completion_tokens": 25,
+            "total_tokens": 115
+          }
+        }
+  recorded_at: Sat, 11 Nov 2023 11:26:24 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"rating\":\"5\",\"text\":\"Excellent
+        summary, very clear and concise.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"rating\":\"4\",\"text\":\"Overall
+        good, but some parts could be explained better.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 11:26:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '2558'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89962'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 25ms
+      X-Request-Id:
+      - 3b28d5d77a7f7186721a9c5de46ab86a
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=ikDiyDAJ.EqmEo4E1n07MHonp.URr6dvdvhbyaSLGH0-1699701987-0-Aar7O/cMqr7zkOOJ1ZFxuy7z347lS1svUKg1Spaf3ldBAxt1RUPk+CJF83O/FHJBfFTIhI9Wgf676c8Bh7a43mE=;
+        path=/; expires=Sat, 11-Nov-23 11:56:27 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82462e1d5d6c406c-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8JgQ5YWO7lZ4YG4y5AeV0tbA0YFeu",
+          "object": "chat.completion",
+          "created": 1699701985,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_GZg6so1Cvzevq6IwGsTMHnQ1",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\"rating\":\"3\",\"text\":\"Average summary, needs more detail and examples.\"}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 124,
+            "completion_tokens": 23,
+            "total_tokens": 147
+          }
+        }
+  recorded_at: Sat, 11 Nov 2023 11:26:27 GMT
+recorded_with: VCR 6.2.0

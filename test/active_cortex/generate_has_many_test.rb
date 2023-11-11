@@ -43,10 +43,74 @@ class GenerateHasManyTest < ActiveSupport::TestCase
     assert_equal 1, @doc.reviews.size
   end
 
+  test "no limit to generation when max_results is empty" do
+    class DocumentWithNoLimit < Document
+      ai_generated :reviews,
+        prompt: :reviews_prompt,
+        max_results: nil
+    end
+
+    @doc = DocumentWithNoLimit.new(text: "ABC")
+
+    stub_generating_reviews_with_no_limit do
+      @doc.generate_reviews!
+    end
+  end
+
+  test "tool calls in parallel" do
+    class DocumentWithParallelReviewGeneration < Document
+      ai_generated :reviews,
+        prompt: -> (doc) { "In parallel, register three reviews for the following: #{doc.text}" },
+        max_results: 3
+    end
+
+    @doc = DocumentWithParallelReviewGeneration.new(text: "ABC")
+
+    stub_generating_reviews_in_parallel do
+      @doc.generate_reviews!
+    end
+
+    assert_equal 3, @doc.reviews.size
+  end
+
+  test "tool calls in parallel with no limit" do
+    class DocumentWithParallelReviewGeneration < Document
+      ai_generated :reviews,
+        prompt: -> (doc) { "In parallel, register three reviews for the following: #{doc.text}" },
+        max_results: nil
+    end
+
+    @doc = DocumentWithParallelReviewGeneration.new(text: "The chicken crossed the road.")
+
+    stub_generating_reviews_with_no_limit_in_parallel do
+      @doc.generate_reviews!
+    end
+
+    assert_equal 3, @doc.reviews.size
+  end
+
   private
 
   def stub_generating_reviews
     VCR.use_cassette("GenerateHasManyTest/generates_three_reviews") do
+      yield
+    end
+  end
+
+  def stub_generating_reviews_with_no_limit
+    VCR.use_cassette("GenerateHasManyTest/generates_three_reviews_with_no_limit") do
+      yield
+    end
+  end
+
+  def stub_generating_reviews_in_parallel
+    VCR.use_cassette("GenerateHasManyTest/generates_three_reviews_in_parallel") do
+      yield
+    end
+  end
+
+  def stub_generating_reviews_with_no_limit_in_parallel
+    VCR.use_cassette("GenerateHasManyTest/generates_three_reviews_with_no_limit_in_parallel") do
       yield
     end
   end

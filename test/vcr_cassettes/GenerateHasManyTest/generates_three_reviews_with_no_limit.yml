@@ -1,0 +1,439 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the following summary of a document: "}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 12:09:59 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '14283'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89967'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - 265dcc17ae37f51e27f5d02b8c7098b9
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=OIe9d_gixy3y21p9futn0WluXrPpkG6BHuXE8eFV8cw-1699704599-0-AQuO2dmzv509/H01Cyg2VfHPz4ZgXlzJosjq1iwdcyxKNIN1TgWwLtWxs8IDTM9u2qTULTZKD01qGlUPSIS9S54=;
+        path=/; expires=Sat, 11-Nov-23 12:39:59 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82466d959f0b6408-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8Jh60qlz4qQkbrIzGvdy1IcYie8M3",
+          "object": "chat.completion",
+          "created": 1699704584,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_yY4l0r0veFZj5NoKT0MndgV3",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\n  \"text\": \"The document provides a comprehensive overview of the topic and presents well-reasoned arguments. The writing is clear and easy to follow. Overall, it is an excellent resource.\"\n}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 59,
+            "completion_tokens": 47,
+            "total_tokens": 106
+          }
+        }
+  recorded_at: Sat, 11 Nov 2023 12:09:59 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"text\":\"The
+        document provides a comprehensive overview of the topic and presents well-reasoned
+        arguments. The writing is clear and easy to follow. Overall, it is an excellent
+        resource.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 12:10:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '3851'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89964'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 24ms
+      X-Request-Id:
+      - 8c00eb75b4e18a0d3a90b35f27989ca5
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=S1ZgnksZ3EnpAlY2OiZT_mu.oWugTGWstGQCBEHgNV4-1699704619-0-AWU+r/k4HSW075sdqoq8jimMUuSz5bXhRUC6QUhIv2llQZ1P9T5ucjWbID7+kJ9KpaVn0Bq36Er5gFfLLapAuSs=;
+        path=/; expires=Sat, 11-Nov-23 12:40:19 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82466e569b6660f7-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8Jh6VcOOX7iHN6RbEDSE62x8HPeKb",
+          "object": "chat.completion",
+          "created": 1699704615,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_lNSQIFb5kQG3oksFUKVmOsxL",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\"text\":\"The document is well-organized with clear headings and subheadings. The author provides sufficient evidence to support their claims. However, the conclusion could be stronger.\"}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 112,
+            "completion_tokens": 42,
+            "total_tokens": 154
+          }
+        }
+  recorded_at: Sat, 11 Nov 2023 12:10:19 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"text\":\"The
+        document provides a comprehensive overview of the topic and presents well-reasoned
+        arguments. The writing is clear and easy to follow. Overall, it is an excellent
+        resource.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"text\":\"The
+        document is well-organized with clear headings and subheadings. The author
+        provides sufficient evidence to support their claims. However, the conclusion
+        could be stronger.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 12:10:58 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '15238'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89962'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 25ms
+      X-Request-Id:
+      - e75a02bdc8b97ba66b303577e877e661
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=2SVScrhaPltFnHYwLCyvQlKI9oVeF11wZfiUIfDtWuw-1699704658-0-AVXb835WalDTM+Cdd+kMg6q7xkgzLq9WHUcmQ6h5Opc6YNLlgd/sBh+RfYpERzj2g/t6T+R2GLIZpkUWnS9JLgQ=;
+        path=/; expires=Sat, 11-Nov-23 12:40:58 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82466f014d6b6383-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8Jh6wntaulgjJkysrRrp2iO9BBzRo",
+          "object": "chat.completion",
+          "created": 1699704642,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_wnVgHogXn2XVqHEjfvK8atvP",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\"text\":\"The document includes relevant examples and case studies, which enhances the understanding of the topic. The writing style is engaging and keeps the reader interested. Overall, it is a highly recommended read.\"}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 163,
+            "completion_tokens": 47,
+            "total_tokens": 210
+          }
+        }
+  recorded_at: Sat, 11 Nov 2023 12:10:58 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"text\":\"The
+        document provides a comprehensive overview of the topic and presents well-reasoned
+        arguments. The writing is clear and easy to follow. Overall, it is an excellent
+        resource.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"text\":\"The
+        document is well-organized with clear headings and subheadings. The author
+        provides sufficient evidence to support their claims. However, the conclusion
+        could be stronger.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"TODO","type":"function","function":{"name":"register_review","arguments":"{\"text\":\"The
+        document includes relevant examples and case studies, which enhances the understanding
+        of the topic. The writing style is engaging and keeps the reader interested.
+        Overall, it is a highly recommended read.\"}"},"finish_reason":"tool_calls"}]},{"tool_call_id":"TODO","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 12:11:04 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '1087'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89959'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 27ms
+      X-Request-Id:
+      - 0e3a2eaac1d6110dab4f8e483629557a
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=1mRPz0wI11pYGEypiYwu6AvpeCwADXVDYTztlQAoLk0-1699704664-0-AX+koHn+bHiaPR8iEjmvHIMsr9q/yRyIskopP8XYts+aeVYbJpl90jUWD5BBwJL5Mdo6RIvEd7HH/1X429lAf8o=;
+        path=/; expires=Sat, 11-Nov-23 12:41:04 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82466f8369948898-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8Jh7HSXgPOapBg9DQ3rgsVD1iQD68",
+          "object": "chat.completion",
+          "created": 1699704663,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "I have registered three reviews for the document summary."
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 219,
+            "completion_tokens": 11,
+            "total_tokens": 230
+          }
+        }
+  recorded_at: Sat, 11 Nov 2023 12:11:05 GMT
+recorded_with: VCR 6.2.0

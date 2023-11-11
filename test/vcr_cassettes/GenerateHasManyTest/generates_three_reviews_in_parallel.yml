@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo-1106","messages":[{"role":"user","content":"In
+        parallel, register three reviews for the following: ABC"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 11 Nov 2023 12:21:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-1106
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '1643'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89968'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 21ms
+      X-Request-Id:
+      - 8f5d80193e85b78986144f5a374a45c6
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=VAdW1YwCFR5mtx54u21ibgs63RLizGR_R.ZNcJ8B5RM-1699705317-0-AYQn8tKniWBl/rbPRqKhS0ZdDW2Feqn2JF5OhJYuK3rshPOoIfgRBpuNT3uzWu7PuYC2GQCNh6q7M8ifDV3rwKE=;
+        path=/; expires=Sat, 11-Nov-23 12:51:57 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82467f6f0ab76418-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8JhHn2o2S3cd0YUaqIAEXKtRgsgnL",
+          "object": "chat.completion",
+          "created": 1699705315,
+          "model": "gpt-3.5-turbo-1106",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_akAw89h2qiAQKiGrXlFH4VpR",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\"rating\": \"4\", \"text\": \"Great product!\"}"
+                    }
+                  },
+                  {
+                    "id": "call_1xz5LhBeWX7XK9zlLLY4UDjN",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\"rating\": \"5\", \"text\": \"Amazing service!\"}"
+                    }
+                  },
+                  {
+                    "id": "call_muzDBCylsUI70kbLxmSQHVlT",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\"rating\": \"3\", \"text\": \"Decent experience\"}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 57,
+            "completion_tokens": 75,
+            "total_tokens": 132
+          },
+          "system_fingerprint": "fp_eeff13170a"
+        }
+  recorded_at: Sat, 11 Nov 2023 12:21:57 GMT
+recorded_with: VCR 6.2.0

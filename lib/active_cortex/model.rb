@@ -29,7 +29,7 @@ module ActiveCortex::Model
     klass = self.class.reflect_on_association(field).klass
 
     res = openai_client.chat(parameters: {
-      model: "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo-1106",
       messages: [
         { role: "user", content: content },
         *results.map do |result_arguments|
@@ -70,13 +70,24 @@ module ActiveCortex::Model
         }
       }]
     })
-    
-    args = res["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
 
-    attrs = JSON.parse(args)
-    results << attrs
+    raise ActiveCortex::Error, res["error"] if res["error"]
 
-    if results.count >= max_results
+    # Break when there is no tool call
+    if res["choices"][0]["message"]["tool_calls"].blank?
+      return results.map { |attrs| klass.new(attrs) } 
+    end
+
+    tool_calls = res["choices"][0]["message"]["tool_calls"]
+
+    # Add each tool call as a result
+    tool_calls.each do |tool_call|
+      attrs_json = tool_call["function"]["arguments"]
+      attrs = JSON.parse(attrs_json)
+      results << attrs
+    end
+
+    if max_results && results.count >= max_results
       results.map { |attrs| klass.new(attrs) }
     else
       generate_has_many(field, prompt: prompt, results: results, max_results: max_results)

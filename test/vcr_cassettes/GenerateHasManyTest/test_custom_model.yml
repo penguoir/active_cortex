@@ -7,7 +7,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"model":"gpt-4","messages":[{"role":"user","content":"Register three
         reviews for the following summary of a document: "}],"tools":[{"type":"function","function":{"description":"Register
-        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+        a Review","name":"register_review","parameters":{"type":"object","properties":[["rating",{"type":"integer"}],["text",{"type":"string"}]]}}}]}'
     headers:
       Content-Type:
       - application/json
@@ -21,27 +21,23 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 400
+      message: Bad Request
     headers:
       Date:
-      - Sat, 11 Nov 2023 13:14:39 GMT
+      - Sat, 11 Nov 2023 23:02:35 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '247'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
-      Cache-Control:
-      - no-cache, must-revalidate
-      Openai-Model:
-      - gpt-4-0613
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '2036'
+      - '5'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -59,42 +55,29 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 198ms
       X-Request-Id:
-      - 90ef5d17bb903963763c0fe6dd8babaa
+      - e0689700943ea35acf7fd47d346b707c
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=XYdDywIcFNC4Cv7Cr169RYS6wFawJWcSdfRdb8JuL1M-1699708479-0-AeJ3FouE8VVLqVKJzIg3DnG20huKgS2dxfe/Fk2tJ6+tUCujo8bgT46E9wFLWxXc/Ejpz8ghqxegvlUHcXZNgT0=;
-        path=/; expires=Sat, 11-Nov-23 13:44:39 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=r._mDYDHh4dtY2u4aaNTUgsv8d5HTPmozAffFFYI4XE-1699743755-0-AQBIRY0mIzBTS9AkrpdW0w8BraC68YkocA2gzXM+awRocFJZZOeV/XSHaW7D+EqE7Q/68AT2r3EDWXvxgtjqoWo=;
+        path=/; expires=Sat, 11-Nov-23 23:32:35 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 8246cc9e0a2b23c6-LHR
+      - 824a29e3d9656397-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |
         {
-          "id": "chatcmpl-8Ji6nshsC5YSffbw8cG37z2NqtBLn",
-          "object": "chat.completion",
-          "created": 1699708477,
-          "model": "gpt-4-0613",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "Sure, can you provide the actual summaries or any information you want me to use in the reviews?"
-              },
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 59,
-            "completion_tokens": 21,
-            "total_tokens": 80
+          "error": {
+            "message": "Invalid schema for function 'register_review': [['rating', {'type': 'integer'}], ['text', {'type': 'string'}]] is not of type 'object'",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": null
           }
         }
-  recorded_at: Sat, 11 Nov 2023 13:14:39 GMT
+  recorded_at: Sat, 11 Nov 2023 23:02:35 GMT
 recorded_with: VCR 6.2.0

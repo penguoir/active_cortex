@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 Nov 2023 13:16:23 GMT
+      - Sat, 11 Nov 2023 23:14:25 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -40,7 +40,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '8111'
+      - '7722'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -58,42 +58,42 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 14ms
       X-Request-Id:
-      - 7892625f3bd71591204a17752fdfa019
+      - 2ad722ffbb0ff1c074d99dc873a3fbb3
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=UWVcccW3sysHhcTXFkI4TQxkGzeW2hTbk.fpB4Z3qPA-1699708583-0-AZXlbEnlIMfV/2fCJaaXlhmcpHwbMf8jmMjHDE9+VPh7U48wXtHvTFAnF5WnS0tmgNA0btsYjVGloR7c8aawFPw=;
-        path=/; expires=Sat, 11-Nov-23 13:46:23 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=DiJZbrKpbgObF1.Hn83pPCtYQTUydQYe_1kLM2M1PFs-1699744465-0-AXB8q8QPN6v+wiJWHQY9m47E46fXQmiaoZW1lI9H2k7U+P043vxk/yTfE2+uNQGFEplGJ3M+ontsUuVg5JilqW0=;
+        path=/; expires=Sat, 11-Nov-23 23:44:25 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 8246cf02fd198865-LHR
+      - 824a3b086b0a417d-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8Ji8NknkVJoPhVTIUPLN0op64Sgwe",
+          "id": "chatcmpl-8JrT7Mvl8CzcrgVuL4sRF9AAVRdik",
           "object": "chat.completion",
-          "created": 1699708575,
+          "created": 1699744457,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "ABC is a three-letter acronym that can stand for multiple meanings. It is the name of a major American television network, as well as the acronym for the American Broadcasting Company. ABC is also a commonly used acronym for \"Always Be Closing,\" a phrase associated with sales and business. Additionally, ABC can represent the first three letters of the English alphabet. The specific meaning of ABC would depend on the context in which it is being used."
+                "content": "ABC is a television network in the United States. It is one of the major broadcast networks and is known for airing a wide range of programming, including dramas, comedies, reality shows, and news. It has produced popular shows such as Grey's Anatomy, Modern Family, and The Bachelor. ABC also airs live events, such as award shows and sports broadcasts."
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
             "prompt_tokens": 12,
-            "completion_tokens": 87,
-            "total_tokens": 99
+            "completion_tokens": 73,
+            "total_tokens": 85
           }
         }
-  recorded_at: Sat, 11 Nov 2023 13:16:23 GMT
+  recorded_at: Sat, 11 Nov 2023 23:14:25 GMT
 recorded_with: VCR 6.2.0

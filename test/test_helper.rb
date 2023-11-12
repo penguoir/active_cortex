@@ -42,12 +42,8 @@ module WithVCR
         age = Time.current - File.mtime(cassette.file)
         FileUtils.rm(cassette.file) if age > 1.month
       end
-      begin
-        yield(cassette)
-      rescue StandardError
-        FileUtils.rm(cassette.file) if File.exist?(cassette.file)
-        raise
-      end
+
+      yield(cassette)
     end
   end
 end

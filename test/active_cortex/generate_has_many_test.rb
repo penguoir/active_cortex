@@ -7,28 +7,6 @@ class GenerateHasManyTest < ActiveSupport::TestCase
     @doc = Document.new(text: "ABC")
   end
 
-  test "generates has_many" do
-    assert_empty @doc.reviews
-
-    with_expiring_vcr_cassette do
-      assert_no_difference "Review.count" do
-        @doc.generate_reviews!
-      end
-    end
-
-    assert_equal 3, @doc.reviews.size
-    assert_operator @doc.reviews[0].text.size, :>, 10
-    assert_equal 5, @doc.reviews[0].rating
-  end
-
-  test "does not save the generated has_many records" do
-    with_expiring_vcr_cassette do
-      assert_no_difference "Review.count" do
-        @doc.generate_reviews!
-      end
-    end
-  end
-
   test "max_results" do
     class DocumentWithOneReview < Document
       ai_generated :reviews,

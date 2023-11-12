@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 Nov 2023 13:20:52 GMT
+      - Sat, 11 Nov 2023 23:14:16 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -40,7 +40,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '2795'
+      - '9493'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -58,42 +58,42 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 14ms
       X-Request-Id:
-      - 1dbd72ac89bf3de06498c6668038b75d
+      - 1ce81dd1cc46e7056265a44fbb4e6b8e
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=iznIRS0IvR4xGnFbikkWyaF3HYUlietOdUSGkeYnoCI-1699708852-0-ATq7hX9FpxCP9aLrnzm6rDP66riY2LHvKPjpUzOP2nZ5iautnLshDttHdCMIz3LLqFwQigZxVzcfNyFKh7lV9Tc=;
-        path=/; expires=Sat, 11-Nov-23 13:50:52 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=VFtpIZDVbTesyPBySF9jsoSvkgFUd0wgUEBiosT2t6w-1699744456-0-AU0Ut4RWxnMIAay1PsHHSR9LHdpDmCSjJ3kTST6p+M6Jqry2sHIUg3gj2y2UGJrMLJebNtn1hej2N1wXw99R9ew=;
+        path=/; expires=Sat, 11-Nov-23 23:44:16 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 8246d5b4fec263dc-LHR
+      - 824a3ac8da4648c4-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8JiCnYXG7TZhIkJTPjxifouHQ9ylU",
+          "id": "chatcmpl-8JrSxGRLOxDGczg89zT5px5Rfbnf8",
           "object": "chat.completion",
-          "created": 1699708849,
+          "created": 1699744447,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "ABC is a media company that operates television networks and radio stations. It is a subsidiary of the Walt Disney Company and offers a variety of programming including news, entertainment, and sports."
+                "content": "ABC is a television network in the United States that offers a wide range of programming, including news, sports, dramas, comedies, and reality shows. It is one of the major broadcast networks in the country and has a large audience. ABC is known for popular shows like Grey's Anatomy, Modern Family, and Good Morning America, as well as its coverage of major events such as the Oscars and the Super Bowl."
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
             "prompt_tokens": 12,
-            "completion_tokens": 36,
-            "total_tokens": 48
+            "completion_tokens": 84,
+            "total_tokens": 96
           }
         }
-  recorded_at: Sat, 11 Nov 2023 13:20:52 GMT
+  recorded_at: Sat, 11 Nov 2023 23:14:16 GMT
 recorded_with: VCR 6.2.0

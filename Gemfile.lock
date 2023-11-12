@@ -122,6 +122,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
+    minitest-stub_any_instance (1.0.3)
     multipart-post (2.3.0)
     net-imap (0.4.1)
       date
@@ -203,12 +204,14 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
   active_cortex!
   debug
   dotenv
+  minitest-stub_any_instance (~> 1.0)
   puma
   sqlite3
   vcr

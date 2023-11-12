@@ -7,7 +7,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"In parallel,
         register three reviews for the following: The chicken crossed the road."}],"tools":[{"type":"function","function":{"description":"Register
-        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+        a Review","name":"register_review","parameters":{"type":"object","properties":[["rating",{"type":"integer"}],["text",{"type":"string"}]]}}}]}'
     headers:
       Content-Type:
       - application/json
@@ -21,27 +21,23 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 400
+      message: Bad Request
     headers:
       Date:
-      - Sat, 11 Nov 2023 13:12:41 GMT
+      - Sat, 11 Nov 2023 23:02:35 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '247'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
-      Cache-Control:
-      - no-cache, must-revalidate
-      Openai-Model:
-      - gpt-3.5-turbo-0613
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '35417'
+      - '4'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -59,375 +55,29 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 25ms
       X-Request-Id:
-      - e84f45b56ccd4efd6f5a87da4134982f
+      - dd2a3e8595d7329f388ae8bb33226cad
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=6H3mx859hUxia_J6hpOy.3YNTlOdutxN7ixe6W75Edo-1699708361-0-Ac3oeAMnGLZW4MKThiepaIMZbw/QYX4p5F+UnAOwMuhF+ecyLjzAqMBzIa0peFvKBW++E6CDdNn25Wvs2gvuz1I=;
-        path=/; expires=Sat, 11-Nov-23 13:42:41 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=_nLCQ.6f4gUB5zJIEiWCe5m61kb76TMOP3SnSCfBbTU-1699743755-0-Ad1/KqvZNWG47mzZEPCafHrtMOPiHmgPzQD81UDZ8YgIDTwmIfuSt5+E28P05WOJTJjHjLYjSBjemR31M0uli5E=;
+        path=/; expires=Sat, 11-Nov-23 23:32:35 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 8246c8ea9c3c23ab-LHR
+      - 824a29e579324176-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-8Ji4LgGBj0ANgdYZ9bt7uMZi9yVFq",
-          "object": "chat.completion",
-          "created": 1699708325,
-          "model": "gpt-3.5-turbo-0613",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": null,
-                "tool_calls": [
-                  {
-                    "id": "call_Uy2xKBXQuHHIgNB4m63VOVlZ",
-                    "type": "function",
-                    "function": {
-                      "name": "register_review",
-                      "arguments": "{\n  \"rating\": \"5\",\n  \"text\": \"I loved it! The chicken had great style and confidence while crossing the road.\"\n}"
-                    }
-                  }
-                ]
-              },
-              "finish_reason": "tool_calls"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 63,
-            "completion_tokens": 36,
-            "total_tokens": 99
-          }
-        }
-  recorded_at: Sat, 11 Nov 2023 13:12:41 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"In parallel,
-        register three reviews for the following: The chicken crossed the road."},{"role":"assistant","content":null,"tool_calls":[{"id":"call_Uy2xKBXQuHHIgNB4m63VOVlZ","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"5\",\n  \"text\": \"I loved it! The chicken had great style and confidence
-        while crossing the road.\"\n}"}}]},{"tool_call_id":"call_Uy2xKBXQuHHIgNB4m63VOVlZ","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
-        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_ACCESS_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 11 Nov 2023 13:12:52 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache, must-revalidate
-      Openai-Model:
-      - gpt-3.5-turbo-0613
-      Openai-Organization:
-      - user-for53p7367c0cyalvfwzeegz
-      Openai-Processing-Ms:
-      - '10835'
-      Openai-Version:
-      - '2020-10-01'
-      Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
-      X-Ratelimit-Limit-Requests:
-      - '3500'
-      X-Ratelimit-Limit-Tokens:
-      - '90000'
-      X-Ratelimit-Remaining-Requests:
-      - '3499'
-      X-Ratelimit-Remaining-Tokens:
-      - '89959'
-      X-Ratelimit-Reset-Requests:
-      - 17ms
-      X-Ratelimit-Reset-Tokens:
-      - 27ms
-      X-Request-Id:
-      - c19655c479a3dbca162dab86fd35b725
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=30_HOkNRryLoXVsKumbjukaD.QEYoXWFUupFt9vnTzQ-1699708372-0-AS7SYf8Fx6QRFgdut38cLrssFtuK9HX2EdG7OZY4jN9/v23yxS6KGwK/oGTOMq3r27w4wn+48lorYX9QPaVPEes=;
-        path=/; expires=Sat, 11-Nov-23 13:42:52 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8246c9c9c9cfdd3b-LHR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8Ji4v1BjAKfkaviZdzIt0SN4wsC88",
-          "object": "chat.completion",
-          "created": 1699708361,
-          "model": "gpt-3.5-turbo-0613",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": null,
-                "tool_calls": [
-                  {
-                    "id": "call_9Wt0god2eMe9eb0Z2YUEbFya",
-                    "type": "function",
-                    "function": {
-                      "name": "register_review",
-                      "arguments": "{\n  \"rating\": \"4\",\n  \"text\": \"The chicken crossing the road was quite amusing. It kept everyone entertained.\"\n}"
-                    }
-                  }
-                ]
-              },
-              "finish_reason": "tool_calls"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 108,
-            "completion_tokens": 34,
-            "total_tokens": 142
+          "error": {
+            "message": "Invalid schema for function 'register_review': [['rating', {'type': 'integer'}], ['text', {'type': 'string'}]] is not of type 'object'",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": null
           }
         }
-  recorded_at: Sat, 11 Nov 2023 13:12:52 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"In parallel,
-        register three reviews for the following: The chicken crossed the road."},{"role":"assistant","content":null,"tool_calls":[{"id":"call_Uy2xKBXQuHHIgNB4m63VOVlZ","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"5\",\n  \"text\": \"I loved it! The chicken had great style and confidence
-        while crossing the road.\"\n}"}}]},{"tool_call_id":"call_Uy2xKBXQuHHIgNB4m63VOVlZ","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_9Wt0god2eMe9eb0Z2YUEbFya","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"4\",\n  \"text\": \"The chicken crossing the road was quite amusing. It
-        kept everyone entertained.\"\n}"}}]},{"tool_call_id":"call_9Wt0god2eMe9eb0Z2YUEbFya","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
-        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_ACCESS_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 11 Nov 2023 13:12:55 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache, must-revalidate
-      Openai-Model:
-      - gpt-3.5-turbo-0613
-      Openai-Organization:
-      - user-for53p7367c0cyalvfwzeegz
-      Openai-Processing-Ms:
-      - '3178'
-      Openai-Version:
-      - '2020-10-01'
-      Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
-      X-Ratelimit-Limit-Requests:
-      - '3500'
-      X-Ratelimit-Limit-Tokens:
-      - '90000'
-      X-Ratelimit-Remaining-Requests:
-      - '3499'
-      X-Ratelimit-Remaining-Tokens:
-      - '89956'
-      X-Ratelimit-Reset-Requests:
-      - 17ms
-      X-Ratelimit-Reset-Tokens:
-      - 28ms
-      X-Request-Id:
-      - 98df0331abe906e6b63163fced1afcb7
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=Xl6VLvEaaUBuY1JAGrpHiSZWauugzF30ASnPiWJaTfo-1699708375-0-ARJRltJ8U00CMn8h6scaZS/hEKv5D3HnZIOrhOf4yYZqf6iAFO690kddCEq2EQAmhdWybMJGXsfkz8sVB55137c=;
-        path=/; expires=Sat, 11-Nov-23 13:42:55 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8246ca0fdebf4071-LHR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-8Ji56EHE3A6RWTa3tjsDMX0GOkpXu",
-          "object": "chat.completion",
-          "created": 1699708372,
-          "model": "gpt-3.5-turbo-0613",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": null,
-                "tool_calls": [
-                  {
-                    "id": "call_BDOL7IoNCdE2Bjg9TYOViA9J",
-                    "type": "function",
-                    "function": {
-                      "name": "register_review",
-                      "arguments": "{\n  \"rating\": \"3\",\n  \"text\": \"The chicken crossing the road was okay. Nothing too exciting or special about it.\"\n}"
-                    }
-                  }
-                ]
-              },
-              "finish_reason": "tool_calls"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 151,
-            "completion_tokens": 36,
-            "total_tokens": 187
-          }
-        }
-  recorded_at: Sat, 11 Nov 2023 13:12:56 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"In parallel,
-        register three reviews for the following: The chicken crossed the road."},{"role":"assistant","content":null,"tool_calls":[{"id":"call_Uy2xKBXQuHHIgNB4m63VOVlZ","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"5\",\n  \"text\": \"I loved it! The chicken had great style and confidence
-        while crossing the road.\"\n}"}}]},{"tool_call_id":"call_Uy2xKBXQuHHIgNB4m63VOVlZ","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_9Wt0god2eMe9eb0Z2YUEbFya","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"4\",\n  \"text\": \"The chicken crossing the road was quite amusing. It
-        kept everyone entertained.\"\n}"}}]},{"tool_call_id":"call_9Wt0god2eMe9eb0Z2YUEbFya","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_BDOL7IoNCdE2Bjg9TYOViA9J","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"3\",\n  \"text\": \"The chicken crossing the road was okay. Nothing too
-        exciting or special about it.\"\n}"}}]},{"tool_call_id":"call_BDOL7IoNCdE2Bjg9TYOViA9J","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
-        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_ACCESS_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 11 Nov 2023 13:12:58 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache, must-revalidate
-      Openai-Model:
-      - gpt-3.5-turbo-0613
-      Openai-Organization:
-      - user-for53p7367c0cyalvfwzeegz
-      Openai-Processing-Ms:
-      - '2192'
-      Openai-Version:
-      - '2020-10-01'
-      Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
-      X-Ratelimit-Limit-Requests:
-      - '3500'
-      X-Ratelimit-Limit-Tokens:
-      - '90000'
-      X-Ratelimit-Remaining-Requests:
-      - '3499'
-      X-Ratelimit-Remaining-Tokens:
-      - '89953'
-      X-Ratelimit-Reset-Requests:
-      - 17ms
-      X-Ratelimit-Reset-Tokens:
-      - 30ms
-      X-Request-Id:
-      - 321d9ff748a47651ce78cd82e3c7a2f9
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=A7WoXKMBJUuQa9z9KfTm01RcXcFQHymPfJtmKGTKs6s-1699708378-0-AR3ixeiePUtQMn7vNUxNqYAh3g2qYAkV3GXNkLeQg4oEJ+voYYbhFs+pK/E27vjEhW0PFkTR2yL79GFUPICfsSA=;
-        path=/; expires=Sat, 11-Nov-23 13:42:58 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8246ca26cf65731e-LHR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-8Ji5AcwoRwY84ukBHJmtt1uQ1vPlI",
-          "object": "chat.completion",
-          "created": 1699708376,
-          "model": "gpt-3.5-turbo-0613",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "I have successfully registered three reviews for the chicken crossing the road. Thank you for your input!"
-              },
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 196,
-            "completion_tokens": 20,
-            "total_tokens": 216
-          }
-        }
-  recorded_at: Sat, 11 Nov 2023 13:12:58 GMT
+  recorded_at: Sat, 11 Nov 2023 23:02:35 GMT
 recorded_with: VCR 6.2.0

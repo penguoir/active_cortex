@@ -17,8 +17,8 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
-require_relative "../test/dummy/config/environment"
-ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]
+require_relative "../spec/dummy/config/environment"
+ActiveRecord::Migrator.migrations_paths = [File.expand_path("../spec/dummy/db/migrate", __dir__)]
 require "rails/test_help"
 
 # Load fixtures from the engine
@@ -36,7 +36,7 @@ Dotenv.load!
 ActiveCortex.config.openai_access_token = ENV.fetch("OPENAI_ACCESS_TOKEN")
 
 VCR.configure do |config|
-  config.cassette_library_dir = "test/vcr_cassettes"
+  config.cassette_library_dir = "spec/vcr_cassettes"
   config.hook_into :webmock
   config.filter_sensitive_data("<OPENAI_ACCESS_TOKEN>") { ENV.fetch("OPENAI_ACCESS_TOKEN") }
   config.default_cassette_options = {

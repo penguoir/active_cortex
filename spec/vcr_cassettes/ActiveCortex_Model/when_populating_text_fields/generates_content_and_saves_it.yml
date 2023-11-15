@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Nov 2023 11:22:25 GMT
+      - Wed, 15 Nov 2023 12:18:16 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -40,7 +40,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '18179'
+      - '21689'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -58,44 +58,44 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 18ms
       X-Request-Id:
-      - 2605d24686fe8fec81023fcfdb1b57a4
+      - a395eec8e1511d1a471fd4afe42a2fa0
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=B.jSd8l6WMJKZjCYANHcNcooEaWgEzdIxTATOpdwkBk-1700047345-0-AeTZqx+gZjvQfkMMQs8R8ThnRCZN1ZVK+Mnv3k7AIkTfcVVbVjpG89V6XeXkco6qE55IOqg7Nshn8cx4b5klkkk=;
-        path=/; expires=Wed, 15-Nov-23 11:52:25 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=S._RG1oLd263a3DH2oaNxrcLLLmazbzPe22OJRin5OI-1700050696-0-ATNTfeQld2hKA31iPQyrIjM/JqfFmHOkL263H/kcnn4zLOoUBOyHSKqeW89si6ZqZnNFU+/IrqGsAnE9gc97q5g=;
+        path=/; expires=Wed, 15-Nov-23 12:48:16 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=g4GpO4ZSLubB8rEDue8cnu1IQULcwaWG9b.qJ5rh8_E-1700047345802-0-604800000;
+      - _cfuvid=2EMkpOzDIwVfHa6twfIvEv4FMY5Prw2b7xnjFAuiw2s-1700050696465-0-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 82671d53f9ef732c-LHR
+      - 82676f0baa317713-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8L8G7hMbPngm2BQT8K71UamgeQGPI",
+          "id": "chatcmpl-8L986prdLsTYFAazbzYhviJYF6Kl0",
           "object": "chat.completion",
-          "created": 1700047327,
+          "created": 1700050674,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "\"The Great Gatsby\" is a novel written by F. Scott Fitzgerald set in New York during the Roaring Twenties. It tells the story of Jay Gatsby, a wealthy man who throws extravagant parties in the hopes of winning back his lost love, Daisy Buchanan. The novel explores themes such as the corruption and excess of the American Dream, the illusion of wealth and social status, and the unfulfilled longing for love and acceptance. Through the eyes of the narrator, Nick Carraway, the novel depicts the tragic downfall of the characters and serves as a criticism of the society of the time. Overall, \"The Great Gatsby\" explores the hollowness of the American Dream and the emptiness felt by those who pursue it."
+                "content": "The Great Gatsby, written by F. Scott Fitzgerald, is a novel set in the 1920s during the era of Jazz Age in America. The story is narrated by Nick Carraway, a young Midwesterner who moves to Long Island in New York and becomes neighbors with Jay Gatsby, an enigmatic and wealthy man known for his extravagant parties. As Nick becomes acquainted with the members of the upper-class society, he learns about Gatsby's obsession with Daisy Buchanan, Nick's cousin, and his desire to recapture their past romantic relationship. Gatsby's extravagant lifestyle, wealth, and secretive nature spark Nick's curiosity and he gradually uncovers the truth about Gatsby's past and his pursuit of the American Dream. The novel explores themes of love, the corruption of the American Dream, and the emptiness of materialism, ultimately culminating in a tragic and disillusioning ending."
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
             "prompt_tokens": 16,
-            "completion_tokens": 150,
-            "total_tokens": 166
+            "completion_tokens": 182,
+            "total_tokens": 198
           }
         }
-  recorded_at: Wed, 15 Nov 2023 11:22:25 GMT
+  recorded_at: Wed, 15 Nov 2023 12:18:16 GMT
 recorded_with: VCR 6.2.0

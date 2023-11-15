@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Nov 2023 11:43:36 GMT
+      - Wed, 15 Nov 2023 12:19:24 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '19657'
+      - '9251'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -59,28 +59,28 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 19ms
       X-Request-Id:
-      - 998b43d2c5565b08bbf8d53ac065d0d3
+      - 3d016b0a75683d29b3ef7195dbcac680
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=257rbDwjJEw2A66Nh5flikw0v78I8NgPO3aNeZB3rok-1700048616-0-ATJHri/qAGUrRBigY0Zp/nKGdGWnaT5C9bwUvNloeF7vrCk0vt7EG0BLI7tgnbIkKIE6N3jPQxPkCJyh6LR55e4=;
-        path=/; expires=Wed, 15-Nov-23 12:13:36 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=qC2z955tE5zl1QKYGF9vwrpYLsedsXaF5O1pvgRU7kI-1700050764-0-AVfzi/6BhCkxan9A2zs7/iCT/mr6Nwe3HBaOUaLYiqmiwqAKTnioihbXJuSYfkms3IKdmwh2f45xN1M6vK3Ws9I=;
+        path=/; expires=Wed, 15-Nov-23 12:49:24 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=M3x9g97MGdBIoPGqZNFZTRQwQrzV4F7KehR1lgi..4M-1700048616360-0-604800000;
+      - _cfuvid=e2VLLC8NHclljhUZeZZ1sEzs_K5Y7dbnbfus6.il.b8-1700050764744-0-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 82673c4f9f74496a-LHR
+      - 826771034857889b-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8L8aaQokz15Vu3IJnuv5Rt1JDDTVj",
+          "id": "chatcmpl-8L99PCj6KPPuwgjYUb6bakHKI8MsF",
           "object": "chat.completion",
-          "created": 1700048596,
+          "created": 1700050755,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -90,11 +90,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_FcapHo2EhfomFPnaRv5CnmRJ",
+                    "id": "call_mnP8k8rEvkGAVt6XCJBqEnBs",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\n  \"content\": \"I absolutely loved The Great Gatsby! The writing is so beautifully descriptive and I was captivated by the story from beginning to end.\",\n  \"rating\": 5  \n}"
+                      "arguments": "{\n  \"content\": \"The Great Gatsby is a timeless classic that offers a glimpse into the decadence and despair of the Jazz Age. F. Scott Fitzgerald's writing is superb, painting vivid and vibrant scenes that transport the reader to the opulence of the 1920s.\",\n  \"rating\": 5\n}"
                     }
                   }
                 ]
@@ -104,21 +104,22 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 55,
-            "completion_tokens": 47,
-            "total_tokens": 102
+            "completion_tokens": 72,
+            "total_tokens": 127
           }
         }
-  recorded_at: Wed, 15 Nov 2023 11:43:36 GMT
+  recorded_at: Wed, 15 Nov 2023 12:19:24 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
       string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews about The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_FcapHo2EhfomFPnaRv5CnmRJ","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
-        \"I absolutely loved The Great Gatsby! The writing is so beautifully descriptive
-        and I was captivated by the story from beginning to end.\",\n  \"rating\":
-        5  \n}"}}]},{"tool_call_id":"call_FcapHo2EhfomFPnaRv5CnmRJ","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        three reviews about The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_mnP8k8rEvkGAVt6XCJBqEnBs","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"The Great Gatsby is a timeless classic that offers a glimpse into the decadence
+        and despair of the Jazz Age. F. Scott Fitzgerald''s writing is superb, painting
+        vivid and vibrant scenes that transport the reader to the opulence of the
+        1920s.\",\n  \"rating\": 5\n}"}}]},{"tool_call_id":"call_mnP8k8rEvkGAVt6XCJBqEnBs","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
         a Review","name":"register_review","parameters":{"type":"object","properties":{"content":{"type":"string"},"rating":{"type":"integer"}}}}}]}'
     headers:
       Content-Type:
@@ -137,7 +138,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Nov 2023 11:43:46 GMT
+      - Wed, 15 Nov 2023 12:19:33 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -153,7 +154,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '9299'
+      - '7680'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -165,34 +166,34 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '3499'
       X-Ratelimit-Remaining-Tokens:
-      - '89969'
+      - '89968'
       X-Ratelimit-Reset-Requests:
       - 17ms
       X-Ratelimit-Reset-Tokens:
       - 20ms
       X-Request-Id:
-      - 467c50cd6b1241688cb9e9b41eabc2d9
+      - 6cd26c8589fd9839118fb1580c7a69b5
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=.UAaSDKcX6I14FVLnGo1KtorCa6zrcLlpcg_XOHvSt0-1700048626-0-AYbXhw8Vxg86qMHlh5YdQ93EMrXo8rY9jYjrQVNwGaXj8euM4H2RdYc493hoBdr2h0D9nQGGjN/89Gi9Q3FeDMI=;
-        path=/; expires=Wed, 15-Nov-23 12:13:46 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=m2ZPzHciV1ygpVNgd3MrisxtJpfoAxN5erRiXK.9.PI-1700050773-0-Ae6nS74ylF5wmrfD3mkit6g6u1s7lZI+SP9irDDGT1snYz0EhtmqKolhA8+NLQRAkawhceGDU5ONF0tULaxM6os=;
+        path=/; expires=Wed, 15-Nov-23 12:49:33 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=wgZUAk_Y4Ysm2Jk1r_LYhJoQ_9xXFfFT_kzfVVHzaDM-1700048626039-0-604800000;
+      - _cfuvid=zVu2tjPrdxcaXSuIEIVelA89irHakmfUX25xXUrn3JY-1700050773030-0-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 82673ccd5800637d-LHR
+      - 826771417a2e636a-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8L8aul2TBiRb1ZO7hOdAwx2W3xdam",
+          "id": "chatcmpl-8L99ZT7XvCzrizOvJnDlGAiE5KZEc",
           "object": "chat.completion",
-          "created": 1700048616,
+          "created": 1700050765,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -202,11 +203,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_cJQyOAcEvFoNG4DeP2TEQ14V",
+                    "id": "call_9wFIajZULAa2bRKAYHGYJe2i",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\n  \"content\": \"The Great Gatsby is a classic novel that skillfully depicts the excesses and hollowness of the Jazz Age. The characters are well-developed and the symbolism is thought-provoking. I highly recommend it.\",\n  \"rating\": 4\n}"
+                      "arguments": "{\n  \"content\": \"The Great Gatsby is a beautifully written novel that explores themes of love, obsession, and the corruption of the American Dream. Fitzgerald's characters are complex and captivating, and the story is both heartbreaking and thought-provoking.\",\n  \"rating\": 4\n}"
                     }
                   }
                 ]
@@ -215,25 +216,27 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 111,
+            "prompt_tokens": 136,
             "completion_tokens": 65,
-            "total_tokens": 176
+            "total_tokens": 201
           }
         }
-  recorded_at: Wed, 15 Nov 2023 11:43:46 GMT
+  recorded_at: Wed, 15 Nov 2023 12:19:32 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
       string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews about The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_FcapHo2EhfomFPnaRv5CnmRJ","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
-        \"I absolutely loved The Great Gatsby! The writing is so beautifully descriptive
-        and I was captivated by the story from beginning to end.\",\n  \"rating\":
-        5  \n}"}}]},{"tool_call_id":"call_FcapHo2EhfomFPnaRv5CnmRJ","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_cJQyOAcEvFoNG4DeP2TEQ14V","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
-        \"The Great Gatsby is a classic novel that skillfully depicts the excesses
-        and hollowness of the Jazz Age. The characters are well-developed and the
-        symbolism is thought-provoking. I highly recommend it.\",\n  \"rating\": 4\n}"}}]},{"tool_call_id":"call_cJQyOAcEvFoNG4DeP2TEQ14V","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        three reviews about The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_mnP8k8rEvkGAVt6XCJBqEnBs","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"The Great Gatsby is a timeless classic that offers a glimpse into the decadence
+        and despair of the Jazz Age. F. Scott Fitzgerald''s writing is superb, painting
+        vivid and vibrant scenes that transport the reader to the opulence of the
+        1920s.\",\n  \"rating\": 5\n}"}}]},{"tool_call_id":"call_mnP8k8rEvkGAVt6XCJBqEnBs","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_9wFIajZULAa2bRKAYHGYJe2i","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"The Great Gatsby is a beautifully written novel that explores themes of
+        love, obsession, and the corruption of the American Dream. Fitzgerald''s characters
+        are complex and captivating, and the story is both heartbreaking and thought-provoking.\",\n  \"rating\":
+        4\n}"}}]},{"tool_call_id":"call_9wFIajZULAa2bRKAYHGYJe2i","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
         a Review","name":"register_review","parameters":{"type":"object","properties":{"content":{"type":"string"},"rating":{"type":"integer"}}}}}]}'
     headers:
       Content-Type:
@@ -252,7 +255,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Nov 2023 11:43:54 GMT
+      - Wed, 15 Nov 2023 12:19:42 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -268,7 +271,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '7019'
+      - '9229'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -286,28 +289,28 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 22ms
       X-Request-Id:
-      - bb707139c1349f053eef5372f316fae4
+      - e63684d3619e4a844d8c7a00fe8950cf
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=aqgRAFmnVHAiVKL.WDoddF9vrG72tA1LyB5ifyMKZXE-1700048634-0-AZpIOvUdbrYJd2yOUWvIKc/YeT0KWht+y6sdlc5qMmqHlax0BsCqs/7RzAqjHfhcJxs0/JJBmj8teNcJq9DRRgg=;
-        path=/; expires=Wed, 15-Nov-23 12:13:54 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=BABZQKBPa.puBRvvsT.vHC2AKLansUBkugE1DBVw_H4-1700050782-0-AdosrrU6lyBeWnSHKOD09HmpbiZ15bBW3xbBWH4k6dAy+wjeS1JrrLtrO+j3M8bdk41u6SJyzAaSwY17UUH+Lr0=;
+        path=/; expires=Wed, 15-Nov-23 12:49:42 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=tj_UJD3uGHKYI9sJdPXhPHzvWUrh_9IHlnPpxXM_xEU-1700048634138-0-604800000;
+      - _cfuvid=cWWHScjzngVOo9xehUG7CzKlbct2kg3Du7gf15vmET4-1700050782651-0-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 82673d0d3fd97741-LHR
+      - 826771747c832404-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8L8b5CGDK66IGKsgNQTV9QlS4wHts",
+          "id": "chatcmpl-8L99hS4e8ulqFwYvmDXRLM2Vva9Eg",
           "object": "chat.completion",
-          "created": 1700048627,
+          "created": 1700050773,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -317,11 +320,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_H1Pm9HiC92QHbCUy9WMu70k8",
+                    "id": "call_39IDkqtyEXkHFLdgVAt4Aaar",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\n  \"content\": \"The Great Gatsby is a timeless masterpiece. F. Scott Fitzgerald's writing style is impeccable and the themes of love, wealth, and the American Dream are deeply explored. It's a must-read for any literature lover.\",\n  \"rating\": 5\n}"
+                      "arguments": "{\n  \"content\": \"The Great Gatsby is a captivating story that delves into the dark underbelly of wealth and privilege. Fitzgerald's portrayal of the shallow and self-centered characters is both chilling and mesmerizing. The tragic ending leaves a lasting impression on the reader.\",\n  \"rating\": 4\n}"
                     }
                   }
                 ]
@@ -330,10 +333,10 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 185,
-            "completion_tokens": 64,
-            "total_tokens": 249
+            "prompt_tokens": 210,
+            "completion_tokens": 70,
+            "total_tokens": 280
           }
         }
-  recorded_at: Wed, 15 Nov 2023 11:43:54 GMT
+  recorded_at: Wed, 15 Nov 2023 12:19:42 GMT
 recorded_with: VCR 6.2.0

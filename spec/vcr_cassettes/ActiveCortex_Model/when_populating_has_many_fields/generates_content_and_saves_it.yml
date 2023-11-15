@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Nov 2023 11:29:54 GMT
+      - Wed, 15 Nov 2023 12:17:33 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '5990'
+      - '4296'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -59,28 +59,28 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 19ms
       X-Request-Id:
-      - 63fe9af0e9f099ad58592c2848216479
+      - 21f6aa49f5fb471ac74f44ae46be05b4
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=0I3sYLG3SFTfo8pkqdp_W1zTOshSd71fw75GrndYFh4-1700047794-0-AeP2mexwbFQ1VYFPL76qPhXJCowIqmIGGRam6MdEm9ES03CRj9Ax1eI60Z5SbP0nbNju+s3+4o8WF8EuVJBqxqs=;
-        path=/; expires=Wed, 15-Nov-23 11:59:54 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=zaBzAZV.lcVR7_eP9WK3lSbJZPGELWvJARyueElGr3g-1700050653-0-AcpgDgdcAnWEtAikmjzHligzRL4mWinnw25LL+KNtrkynUAfIoyvvHeB4+oU3kTOfaykwFYKmkbcDpJDyV3mFzQ=;
+        path=/; expires=Wed, 15-Nov-23 12:47:33 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=68d6HfVgl1qQjJUMJTicNr_cDEOGgvTii_.SAh20C3Q-1700047794256-0-604800000;
+      - _cfuvid=hnmRXltcF_v7F..v6vweb5yFH.Wd1NcTkiXNWmaowY4-1700050653150-0-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 8267289319aa63c0-LHR
+      - 82676e64d90c4167-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8L8NY0405gLuGUgkUIu82CqLSIyIo",
+          "id": "chatcmpl-8L97hwd0NYNElLXikARImC6u7O2d7",
           "object": "chat.completion",
-          "created": 1700047788,
+          "created": 1700050649,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -90,11 +90,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_Z24aBiDZkmt5EKM3TcMbyD2j",
+                    "id": "call_jmGQuE10Jz68ElxyN394Gr1J",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\n  \"content\": \"The Great Gatsby is a masterpiece. The writing is elegant and the characters are captivating. I couldn't put it down!\",\n  \"rating\": 5\n}"
+                      "arguments": "{\n  \"content\": \"Fantastic book, loved the characters and the story.\",\n  \"rating\": 5\n}"
                     }
                   }
                 ]
@@ -104,20 +104,19 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 56,
-            "completion_tokens": 45,
-            "total_tokens": 101
+            "completion_tokens": 30,
+            "total_tokens": 86
           }
         }
-  recorded_at: Wed, 15 Nov 2023 11:29:54 GMT
+  recorded_at: Wed, 15 Nov 2023 12:17:33 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
       string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews for the The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_Z24aBiDZkmt5EKM3TcMbyD2j","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
-        \"The Great Gatsby is a masterpiece. The writing is elegant and the characters
-        are captivating. I couldn''t put it down!\",\n  \"rating\": 5\n}"}}]},{"tool_call_id":"call_Z24aBiDZkmt5EKM3TcMbyD2j","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        three reviews for the The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_jmGQuE10Jz68ElxyN394Gr1J","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"Fantastic book, loved the characters and the story.\",\n  \"rating\": 5\n}"}}]},{"tool_call_id":"call_jmGQuE10Jz68ElxyN394Gr1J","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
         a Review","name":"register_review","parameters":{"type":"object","properties":{"content":{"type":"string"},"rating":{"type":"integer"}}}}}]}'
     headers:
       Content-Type:
@@ -136,7 +135,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Nov 2023 11:30:00 GMT
+      - Wed, 15 Nov 2023 12:17:38 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -152,7 +151,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '6135'
+      - '4334'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -170,28 +169,28 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 21ms
       X-Request-Id:
-      - c2758cab3a1ea90a44ee582554777286
+      - ce29f2967dbf848491b8ce785f1be2a2
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=8Lv9RzpesP4uP5NINNF5R54_UjvfvAxXdezJQCUrHM0-1700047800-0-ARDkDnTIPRqcK88JB3yi+G+yjFnLtXnqVn55whi51xHAZWM8s8m8zvOqkeXHGiFNyQwINU1fvU1wG+gl01ts2u4=;
-        path=/; expires=Wed, 15-Nov-23 12:00:00 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=KZQMnrW4EPolEkJ55TuxYy90UjinhY5PrpUp5zH9Sgw-1700050658-0-AYnksmmmzDWcqsPXo0iYTnyS9HzV8vTr8il/Wm3/dA6jg4Ht3lapIZcVR5tRc4pmOCHhy6fA6bxk6cEUVX1Dt0Y=;
+        path=/; expires=Wed, 15-Nov-23 12:47:38 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=471BIMPeVlKGsHUOLxGTE.R05sv6QvoBos9jCkcqxJc-1700047800844-0-604800000;
+      - _cfuvid=NVIFl9NsBJq0bWYJAv6QIRDkFwxR0RyMgNywk1hCI8Q-1700050658621-0-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 826728bbd878652f-LHR
+      - 82676e8b6da6653c-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8L8NeOMOaJgP5FRRwSpvmfmnfW67d",
+          "id": "chatcmpl-8L97mer9wZ9kl06VFMwUHTObcCINK",
           "object": "chat.completion",
-          "created": 1700047794,
+          "created": 1700050654,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -201,11 +200,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_7mk33uOgR9WfrRZlcijXUMYx",
+                    "id": "call_Q1x8jImxHxml7DqpNmFkyMPF",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\n  \"content\": \"I found The Great Gatsby to be a bit overrated. The story was slow and the characters were not very likable. Not my favorite book.\",\n  \"rating\": 3\n}"
+                      "arguments": "{\n  \"content\": \"One of the best books I've ever read, amazing writing and captivating plot.\",\n  \"rating\": 5\n}"
                     }
                   }
                 ]
@@ -214,24 +213,22 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 110,
-            "completion_tokens": 51,
-            "total_tokens": 161
+            "prompt_tokens": 95,
+            "completion_tokens": 36,
+            "total_tokens": 131
           }
         }
-  recorded_at: Wed, 15 Nov 2023 11:30:00 GMT
+  recorded_at: Wed, 15 Nov 2023 12:17:44 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
       string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews for the The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_Z24aBiDZkmt5EKM3TcMbyD2j","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
-        \"The Great Gatsby is a masterpiece. The writing is elegant and the characters
-        are captivating. I couldn''t put it down!\",\n  \"rating\": 5\n}"}}]},{"tool_call_id":"call_Z24aBiDZkmt5EKM3TcMbyD2j","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_7mk33uOgR9WfrRZlcijXUMYx","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
-        \"I found The Great Gatsby to be a bit overrated. The story was slow and the
-        characters were not very likable. Not my favorite book.\",\n  \"rating\":
-        3\n}"}}]},{"tool_call_id":"call_7mk33uOgR9WfrRZlcijXUMYx","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        three reviews for the The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_jmGQuE10Jz68ElxyN394Gr1J","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"Fantastic book, loved the characters and the story.\",\n  \"rating\": 5\n}"}}]},{"tool_call_id":"call_jmGQuE10Jz68ElxyN394Gr1J","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_Q1x8jImxHxml7DqpNmFkyMPF","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"One of the best books I''ve ever read, amazing writing and captivating plot.\",\n  \"rating\":
+        5\n}"}}]},{"tool_call_id":"call_Q1x8jImxHxml7DqpNmFkyMPF","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
         a Review","name":"register_review","parameters":{"type":"object","properties":{"content":{"type":"string"},"rating":{"type":"integer"}}}}}]}'
     headers:
       Content-Type:
@@ -250,7 +247,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Nov 2023 11:30:08 GMT
+      - Wed, 15 Nov 2023 12:17:50 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -266,7 +263,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '6649'
+      - '4979'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -278,34 +275,34 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '3499'
       X-Ratelimit-Remaining-Tokens:
-      - '89966'
+      - '89965'
       X-Ratelimit-Reset-Requests:
       - 17ms
       X-Ratelimit-Reset-Tokens:
       - 22ms
       X-Request-Id:
-      - acd1e5b45cb39340294a175b49156b1b
+      - 518f655ae6a8336c7add4542cd32a5bb
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=aoccwLpqyTTDXgwgdcqDwBv9gKhHtRo_.l.L_VIGMkQ-1700047808-0-AVOThGmcF5AX79gKCQHSl5zo185jJHyudeJdV0fRihL3tgZ8TYie/Q/epIp4tv89maf83TMfI8vnIbsWJ6gDLpc=;
-        path=/; expires=Wed, 15-Nov-23 12:00:08 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=O0nWaIyJ8bUDk__CgTF4BQWtI79GSuRZ5htZMzC5sJM-1700050670-0-AWqeAlXEMEw63bnENF5PCLHHomzMZaquw9k0z7moZ+hkRn7soFJIe8n7wUvnsPg4lsq3Q1RGDLt+H0ijFlYwntE=;
+        path=/; expires=Wed, 15-Nov-23 12:47:50 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=UbbvxBBTP8nmKlmYZiITqm3avcljcYM.YBAkyheyl4s-1700047808051-0-604800000;
+      - _cfuvid=Qx6ETpkN2n2wIfarOxEGhuf27JMpzwqnEZ4eqgmeTXQ-1700050670750-0-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 826728e48cc363c1-LHR
+      - 82676ed2ca5ed17c-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8L8NllIcMc5g37gvLCXqqXar8gpXF",
+          "id": "chatcmpl-8L97xjAE0HA7pQNsjr5oOAPOM56sO",
           "object": "chat.completion",
-          "created": 1700047801,
+          "created": 1700050665,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -315,11 +312,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_2BV2jrKlvtmcHmaCbFPokCf4",
+                    "id": "call_hxEr41hrKQnIBBSIaua5GGkh",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\n  \"content\": \"The Great Gatsby is a classic novel that beautifully captures the decadence and disillusionment of the Jazz Age. Fitzgerald's prose is stunning and the story is both tragic and captivating. Highly recommend!\",\n  \"rating\": 4\n}"
+                      "arguments": "{\n  \"content\": \"I found the book slow-paced and not very engaging.\",\n  \"rating\": 2\n}"
                     }
                   }
                 ]
@@ -328,10 +325,10 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 170,
-            "completion_tokens": 59,
-            "total_tokens": 229
+            "prompt_tokens": 140,
+            "completion_tokens": 31,
+            "total_tokens": 171
           }
         }
-  recorded_at: Wed, 15 Nov 2023 11:30:08 GMT
+  recorded_at: Wed, 15 Nov 2023 12:17:54 GMT
 recorded_with: VCR 6.2.0

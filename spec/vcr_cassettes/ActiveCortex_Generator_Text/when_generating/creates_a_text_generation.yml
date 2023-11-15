@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Write
+        a summary of the book The Great Gatsby"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Nov 2023 12:20:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '57007'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89972'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 18ms
+      X-Request-Id:
+      - 710a65d0b55b85e6a289a39b91b89dd7
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=X1c5m3Jm9DHvbiEgnQmUbytZiqLLUqotH6ekQqE96Ek-1700050840-0-AV7n6t49wft8eyup7emx44ruNdbrdffigjR9YJZqvXJ/RqVTXTHiKKEm5G3IYkcH+mDtAocO5vyO8Zl6s5QwcDU=;
+        path=/; expires=Wed, 15-Nov-23 12:50:40 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=jFf8lPmvuoShocIRU5E1UNFVoyitYNWmMKlrwdoeIj0-1700050840980-0-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 826771b5fc13dcd3-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8L99rm9OCxA77smn2ILyC0kVAsOLq",
+          "object": "chat.completion",
+          "created": 1700050783,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "The Great Gatsby by F. Scott Fitzgerald is set in the 1920s, commonly known as the Jazz Age or the Roaring Twenties, and follows the lives of the wealthy and superficial residents of West Egg, Long Island. Narrated by Nick Carraway, the novel centers around Jay Gatsby, a mysterious and enigmatic millionaire who throws grand parties and has a notorious reputation.\n\nThe story begins when Nick moves to West Egg and becomes Gatsby's neighbor. As Nick gets to know his eccentric neighbor, he learns about Gatsby's obsession with Daisy Buchanan, Nick's cousin, whom he had a brief romantic relationship with in the past. Gatsby throws lavish parties every weekend, hoping that Daisy will one day attend. Nick soon discovers that Gatsby's wealth and extravagant lifestyle are all fueled by his desire to win Daisy back.\n\nAs the narrative unfolds, the reader delves into the complex relationships between the characters. Nick becomes a confidant to Gatsby, and Gatsby reveals his secret past and his intense longing for Daisy. Daisy, on the other hand, is married to Tom Buchanan, a wealthy and arrogant man. Despite her marriage, Daisy still holds feelings for Gatsby.\n\nIn an attempt to rekindle their romance, Gatsby orchestrates a meeting between Nick and Daisy, during which their past love is reawakened. Eventually, Gatsby and Daisy embark on an affair, causing tension between Gatsby and Tom. As the pressure mounts, secrets are revealed, and the characters find themselves entangled in a tragic chain of events.\n\nFitzgerald explores themes of love, wealth, and the destructive power of the American Dream in The Great Gatsby. Through his vivid imagery and lyrical prose, he exposes the emptiness and moral decay of the wealthy elite, unveiling the hollowness of their parties and desires. The novel serves as an indictment of 1920s American society, highlighting the corruption and disillusionment that permeated the era.\n\nIn the end, The Great Gatsby paints a bleak portrait of the American Dream, showing how ambition, wealth, and the pursuit of a dream can ultimately lead to tragedy and despair. It remains a timeless classic, shedding light on the innate human desires and the flawed nature of humanity."
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 17,
+            "completion_tokens": 457,
+            "total_tokens": 474
+          }
+        }
+  recorded_at: Wed, 15 Nov 2023 12:20:58 GMT
+recorded_with: VCR 6.2.0

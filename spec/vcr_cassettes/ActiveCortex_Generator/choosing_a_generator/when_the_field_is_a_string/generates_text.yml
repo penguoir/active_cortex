@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Write
+        a summary of the book The Great Gatsby"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Nov 2023 12:19:14 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '22964'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89971'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 18ms
+      X-Request-Id:
+      - 358aed8f4cca6f3debaeb5190839af11
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=VbQnJibzDzmbBTYOjDFA1ANWVdESfD6WJsitUBqNhE4-1700050754-0-AcjLQ3N+7S8wnBaJOfZpUYXYtvi/UpQaSg1TEcU8GzzvfXcVnCvVDqlgZthTDb1RSwLjeISo0rSmSQA71Axg2HE=;
+        path=/; expires=Wed, 15-Nov-23 12:49:14 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=PKqplFQEOfOTLkuX1oAhrL.NoXnpTKVimGkt4jUEKp4-1700050754395-0-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8267706d9c1c414d-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8L991dYgioegH8rnXvpm4TniQHFl4",
+          "object": "chat.completion",
+          "created": 1700050731,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "\"The Great Gatsby\" written by F. Scott Fitzgerald, is a classic American novel set in the 1920s. The story is narrated by Nick Carraway, who moves to New York City and becomes involved in the lives of the wealthy and extravagant people living in the fictional town of West Egg. The main character, Jay Gatsby, is a mysterious and enigmatic figure who throws extravagant parties in hopes of attracting the love of his life, Daisy Buchanan. As the story unfolds, readers witness the decadence and excess of the Jazz Age, as well as the disillusionment and moral decay that lay beneath the glittering surface. The novel explores themes of wealth, love, social class, and the American Dream. Ultimately, it depicts the tragic downfall of Gatsby and exposes the emptiness of the pursuit of wealth and status. Fitzgerald's beautiful prose and vivid imagery make \"The Great Gatsby\" a timeless exploration of the human condition and the fleeting nature of happiness."
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 17,
+            "completion_tokens": 197,
+            "total_tokens": 214
+          }
+        }
+  recorded_at: Wed, 15 Nov 2023 12:19:14 GMT
+recorded_with: VCR 6.2.0

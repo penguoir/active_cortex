@@ -42,6 +42,14 @@ class Document < ApplicationRecord
   # (or)
   ai_generated :summary, prompt: :generate_summary_prompt
 
+  # Generate has_many associations
+  has_many :reviews
+
+  # This will look at the Review class and pass its schema to OpenAI.
+  ai_generated :reviews,
+    prompt: -> (doc) { "Register three reviews for #{doc.title}" },
+    max_results: 3
+
   private
 
   def generate_summary_prompt
@@ -53,6 +61,9 @@ end
 doc = Document.new(text: "Call me Ishmael...")
 doc.generate_summary!
 doc.summary # => an AI-generated summary of `text`
+
+doc.generate_reviews!
+doc.reviews # => [#<Review id: nil content: "Wonderful! The way...", rating: 5>, ...]
 ```
 
 ## Installation

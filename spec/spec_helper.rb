@@ -38,12 +38,13 @@ rescue
   puts "Did not load .env file"
 end
 
-ActiveCortex.config.openai_access_token = ENV.fetch("OPENAI_ACCESS_TOKEN")
+openai_access_token = ENV.fetch("OPENAI_ACCESS_TOKEN") { "openai-placeholder" }
+ActiveCortex.config.openai_access_token = openai_access_token
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data("<OPENAI_ACCESS_TOKEN>") { ENV.fetch("OPENAI_ACCESS_TOKEN") }
+  config.filter_sensitive_data("<OPENAI_ACCESS_TOKEN>") { openai_access_token }
   config.default_cassette_options = {
     match_requests_on: [:method, :uri, :body],
     drop_unused_requests: true

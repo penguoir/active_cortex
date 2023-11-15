@@ -40,11 +40,22 @@ module ActiveCortex::Model
     #   * model: the ChatGPT model to use for generating content
     #   * max_results: for has_many associations, the maximum number of results to generate
     def ai_generated(field_name, prompt:, max_results: nil, model: DEFAULT_MODEL)
+      validate_arguments!(field_name, prompt, max_results, model)
+
       define_method "generate_#{field_name}!" do
         ActiveCortex::Generator.generate(
           record: self, field_name:, prompt:, max_results:, model:
         )
       end
+    end
+
+    private
+
+    def validate_arguments!(field_name, prompt, max_results, model)
+      raise ArgumentError, "field_name must be a symbol or string" unless field_name.is_a?(Symbol) || field_name.is_a?(String)
+      raise ArgumentError, "prompt must be a proc" unless prompt.is_a?(Proc)
+      raise ArgumentError, "max_results must be a number" unless max_results.nil? || max_results.is_a?(Integer)
+      raise ArgumentError, "model must be a string" unless model.is_a?(String)
     end
   end
 end

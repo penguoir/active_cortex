@@ -86,6 +86,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    diff-lcs (1.5.0)
     dotenv (2.8.1)
     dry-configurable (1.1.0)
       dry-core (~> 1.0, < 2)
@@ -181,6 +182,19 @@ GEM
     reline (0.3.9)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.1)
     ruby-openai (5.1.0)
       faraday (>= 1)
       faraday-multipart (>= 1)
@@ -213,6 +227,7 @@ DEPENDENCIES
   dotenv
   minitest-stub_any_instance (~> 1.0)
   puma
+  rspec (~> 3.12)
   sqlite3
   vcr
   webmock

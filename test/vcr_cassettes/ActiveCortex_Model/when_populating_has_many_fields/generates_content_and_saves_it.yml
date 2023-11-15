@@ -6,8 +6,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews for the following summary of a document: "}],"tools":[{"type":"function","function":{"description":"Register
-        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
+        three reviews for the The Great Gatsby"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"content":{"type":"string"},"rating":{"type":"integer"}}}}}]}'
     headers:
       Content-Type:
       - application/json
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 Nov 2023 13:08:43 GMT
+      - Wed, 15 Nov 2023 11:29:54 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '6512'
+      - '5990'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -53,32 +53,259 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '3499'
       X-Ratelimit-Remaining-Tokens:
-      - '89967'
+      - '89970'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 19ms
+      X-Request-Id:
+      - 63fe9af0e9f099ad58592c2848216479
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=0I3sYLG3SFTfo8pkqdp_W1zTOshSd71fw75GrndYFh4-1700047794-0-AeP2mexwbFQ1VYFPL76qPhXJCowIqmIGGRam6MdEm9ES03CRj9Ax1eI60Z5SbP0nbNju+s3+4o8WF8EuVJBqxqs=;
+        path=/; expires=Wed, 15-Nov-23 11:59:54 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=68d6HfVgl1qQjJUMJTicNr_cDEOGgvTii_.SAh20C3Q-1700047794256-0-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8267289319aa63c0-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8L8NY0405gLuGUgkUIu82CqLSIyIo",
+          "object": "chat.completion",
+          "created": 1700047788,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_Z24aBiDZkmt5EKM3TcMbyD2j",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\n  \"content\": \"The Great Gatsby is a masterpiece. The writing is elegant and the characters are captivating. I couldn't put it down!\",\n  \"rating\": 5\n}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 56,
+            "completion_tokens": 45,
+            "total_tokens": 101
+          }
+        }
+  recorded_at: Wed, 15 Nov 2023 11:29:54 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_Z24aBiDZkmt5EKM3TcMbyD2j","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"The Great Gatsby is a masterpiece. The writing is elegant and the characters
+        are captivating. I couldn''t put it down!\",\n  \"rating\": 5\n}"}}]},{"tool_call_id":"call_Z24aBiDZkmt5EKM3TcMbyD2j","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"content":{"type":"string"},"rating":{"type":"integer"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Nov 2023 11:30:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '6135'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89968'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 21ms
+      X-Request-Id:
+      - c2758cab3a1ea90a44ee582554777286
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=8Lv9RzpesP4uP5NINNF5R54_UjvfvAxXdezJQCUrHM0-1700047800-0-ARDkDnTIPRqcK88JB3yi+G+yjFnLtXnqVn55whi51xHAZWM8s8m8zvOqkeXHGiFNyQwINU1fvU1wG+gl01ts2u4=;
+        path=/; expires=Wed, 15-Nov-23 12:00:00 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=471BIMPeVlKGsHUOLxGTE.R05sv6QvoBos9jCkcqxJc-1700047800844-0-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 826728bbd878652f-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8L8NeOMOaJgP5FRRwSpvmfmnfW67d",
+          "object": "chat.completion",
+          "created": 1700047794,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call_7mk33uOgR9WfrRZlcijXUMYx",
+                    "type": "function",
+                    "function": {
+                      "name": "register_review",
+                      "arguments": "{\n  \"content\": \"I found The Great Gatsby to be a bit overrated. The story was slow and the characters were not very likable. Not my favorite book.\",\n  \"rating\": 3\n}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 110,
+            "completion_tokens": 51,
+            "total_tokens": 161
+          }
+        }
+  recorded_at: Wed, 15 Nov 2023 11:30:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
+        three reviews for the The Great Gatsby"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_Z24aBiDZkmt5EKM3TcMbyD2j","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"The Great Gatsby is a masterpiece. The writing is elegant and the characters
+        are captivating. I couldn''t put it down!\",\n  \"rating\": 5\n}"}}]},{"tool_call_id":"call_Z24aBiDZkmt5EKM3TcMbyD2j","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_7mk33uOgR9WfrRZlcijXUMYx","type":"function","function":{"name":"register_review","arguments":"{\n  \"content\":
+        \"I found The Great Gatsby to be a bit overrated. The story was slow and the
+        characters were not very likable. Not my favorite book.\",\n  \"rating\":
+        3\n}"}}]},{"tool_call_id":"call_7mk33uOgR9WfrRZlcijXUMYx","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
+        a Review","name":"register_review","parameters":{"type":"object","properties":{"content":{"type":"string"},"rating":{"type":"integer"}}}}}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Nov 2023 11:30:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-for53p7367c0cyalvfwzeegz
+      Openai-Processing-Ms:
+      - '6649'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89966'
       X-Ratelimit-Reset-Requests:
       - 17ms
       X-Ratelimit-Reset-Tokens:
       - 22ms
       X-Request-Id:
-      - c01f13fe9767f7e6db43bd257a62ae36
+      - acd1e5b45cb39340294a175b49156b1b
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=vKD1_YaLgMsPR1PdE34I_fDCr9YPioyzY23ZI4UR4fk-1699708123-0-Aa5W8TtdHTG9+ugGkbc6Te7YkPe7YKZ2ynHir9eVibg4DiaIRciRWHztKWHKgrKksfbQlF12mzibd+iJ+hRlZFM=;
-        path=/; expires=Sat, 11-Nov-23 13:38:43 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=aoccwLpqyTTDXgwgdcqDwBv9gKhHtRo_.l.L_VIGMkQ-1700047808-0-AVOThGmcF5AX79gKCQHSl5zo185jJHyudeJdV0fRihL3tgZ8TYie/Q/epIp4tv89maf83TMfI8vnIbsWJ6gDLpc=;
+        path=/; expires=Wed, 15-Nov-23 12:00:08 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
+      - _cfuvid=UbbvxBBTP8nmKlmYZiITqm3avcljcYM.YBAkyheyl4s-1700047808051-0-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 8246c3cf8dc96542-LHR
+      - 826728e48cc363c1-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8Ji0yzCQZTELVVDCOOMDJGp8N2YkP",
+          "id": "chatcmpl-8L8NllIcMc5g37gvLCXqqXar8gpXF",
           "object": "chat.completion",
-          "created": 1699708116,
+          "created": 1700047801,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -88,11 +315,11 @@ http_interactions:
                 "content": null,
                 "tool_calls": [
                   {
-                    "id": "call_MJthg0CljouYkNvrLv09Vlb1",
+                    "id": "call_2BV2jrKlvtmcHmaCbFPokCf4",
                     "type": "function",
                     "function": {
                       "name": "register_review",
-                      "arguments": "{\n  \"rating\": \"5\",\n  \"text\": \"The document provided all the necessary information and was well-organized. Highly recommended!\"\n}"
+                      "arguments": "{\n  \"content\": \"The Great Gatsby is a classic novel that beautifully captures the decadence and disillusionment of the Jazz Age. Fitzgerald's prose is stunning and the story is both tragic and captivating. Highly recommend!\",\n  \"rating\": 4\n}"
                     }
                   }
                 ]
@@ -101,230 +328,10 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 59,
-            "completion_tokens": 36,
-            "total_tokens": 95
+            "prompt_tokens": 170,
+            "completion_tokens": 59,
+            "total_tokens": 229
           }
         }
-  recorded_at: Sat, 11 Nov 2023 13:08:43 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"call_MJthg0CljouYkNvrLv09Vlb1","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"5\",\n  \"text\": \"The document provided all the necessary information
-        and was well-organized. Highly recommended!\"\n}"}}]},{"tool_call_id":"call_MJthg0CljouYkNvrLv09Vlb1","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
-        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_ACCESS_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 11 Nov 2023 13:08:47 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache, must-revalidate
-      Openai-Model:
-      - gpt-3.5-turbo-0613
-      Openai-Organization:
-      - user-for53p7367c0cyalvfwzeegz
-      Openai-Processing-Ms:
-      - '3561'
-      Openai-Version:
-      - '2020-10-01'
-      Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
-      X-Ratelimit-Limit-Requests:
-      - '3500'
-      X-Ratelimit-Limit-Tokens:
-      - '90000'
-      X-Ratelimit-Remaining-Requests:
-      - '3499'
-      X-Ratelimit-Remaining-Tokens:
-      - '89964'
-      X-Ratelimit-Reset-Requests:
-      - 17ms
-      X-Ratelimit-Reset-Tokens:
-      - 24ms
-      X-Request-Id:
-      - 7abe35cdc9728e1f02dd282f864f80e2
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=PBvhz49tXBDMmVwMeYwwSw70RcyGyKNhEM84Gfn_J.k-1699708127-0-AZJZjj4iLlV9lRwjVrBBiTqQO8vqlgDdvgnyK6NluBWMX157toV3bzp+NvHmUZe0LSB52asqf9lZ+L1skxg8VBE=;
-        path=/; expires=Sat, 11-Nov-23 13:38:47 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8246c3fa9dfe63cc-LHR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-8Ji15j98vsTwthooIujF6Nz6AYIZD",
-          "object": "chat.completion",
-          "created": 1699708123,
-          "model": "gpt-3.5-turbo-0613",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": null,
-                "tool_calls": [
-                  {
-                    "id": "call_pLbUsfHTpJAzMD6u7F4K7bbs",
-                    "type": "function",
-                    "function": {
-                      "name": "register_review",
-                      "arguments": "{\n  \"rating\": \"4\",\n  \"text\": \"The document was informative and concise. It could have included more examples for better understanding.\"\n}"
-                    }
-                  }
-                ]
-              },
-              "finish_reason": "tool_calls"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 104,
-            "completion_tokens": 37,
-            "total_tokens": 141
-          }
-        }
-  recorded_at: Sat, 11 Nov 2023 13:08:47 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Register
-        three reviews for the following summary of a document: "},{"role":"assistant","content":null,"tool_calls":[{"id":"call_MJthg0CljouYkNvrLv09Vlb1","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"5\",\n  \"text\": \"The document provided all the necessary information
-        and was well-organized. Highly recommended!\"\n}"}}]},{"tool_call_id":"call_MJthg0CljouYkNvrLv09Vlb1","role":"tool","name":"register_review","content":"OK"},{"role":"assistant","content":null,"tool_calls":[{"id":"call_pLbUsfHTpJAzMD6u7F4K7bbs","type":"function","function":{"name":"register_review","arguments":"{\n  \"rating\":
-        \"4\",\n  \"text\": \"The document was informative and concise. It could have
-        included more examples for better understanding.\"\n}"}}]},{"tool_call_id":"call_pLbUsfHTpJAzMD6u7F4K7bbs","role":"tool","name":"register_review","content":"OK"}],"tools":[{"type":"function","function":{"description":"Register
-        a Review","name":"register_review","parameters":{"type":"object","properties":{"rating":{"type":"string"},"text":{"type":"string"}}}}}]}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_ACCESS_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 11 Nov 2023 13:08:50 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache, must-revalidate
-      Openai-Model:
-      - gpt-3.5-turbo-0613
-      Openai-Organization:
-      - user-for53p7367c0cyalvfwzeegz
-      Openai-Processing-Ms:
-      - '3246'
-      Openai-Version:
-      - '2020-10-01'
-      Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
-      X-Ratelimit-Limit-Requests:
-      - '3500'
-      X-Ratelimit-Limit-Tokens:
-      - '90000'
-      X-Ratelimit-Remaining-Requests:
-      - '3499'
-      X-Ratelimit-Remaining-Tokens:
-      - '89962'
-      X-Ratelimit-Reset-Requests:
-      - 17ms
-      X-Ratelimit-Reset-Tokens:
-      - 25ms
-      X-Request-Id:
-      - a912d12c4e60284a55e4c8f5283a891a
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=cvHbamr4TWsjkncM6t2StyZMPG3iUMGlf4OmfgmmDaA-1699708130-0-ASkWLc0mtv6S3jxUJSJIVw7WjR4FQk81+1d/J8c3ymXmi6ZEP2iB3BMexfkQS08CMDIZ8lA/2VKf5pFG18Hj6Qk=;
-        path=/; expires=Sat, 11-Nov-23 13:38:50 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8246c412cd3563a9-LHR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-8Ji19SIiLInlcUP8myE3i9ZeSX0r0",
-          "object": "chat.completion",
-          "created": 1699708127,
-          "model": "gpt-3.5-turbo-0613",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": null,
-                "tool_calls": [
-                  {
-                    "id": "call_b4Stw3ErAOPsJ0KHvk9yDSzd",
-                    "type": "function",
-                    "function": {
-                      "name": "register_review",
-                      "arguments": "{\n  \"rating\": \"3\",\n  \"text\": \"The document was difficult to follow and lacked clear explanations. Some sections were confusing.\"\n}"
-                    }
-                  }
-                ]
-              },
-              "finish_reason": "tool_calls"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 150,
-            "completion_tokens": 36,
-            "total_tokens": 186
-          }
-        }
-  recorded_at: Sat, 11 Nov 2023 13:08:50 GMT
+  recorded_at: Wed, 15 Nov 2023 11:30:08 GMT
 recorded_with: VCR 6.2.0

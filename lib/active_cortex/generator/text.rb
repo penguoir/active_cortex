@@ -8,12 +8,20 @@ class ActiveCortex::Generator::Text < ActiveCortex::Generator
   end
 
   def generation
-    message = openai_response.dig("choices", 0, "message", "content")
-    return message if message.present?
-    raise ActiveCortex::Error, error_message
+    openai_content || raise(ActiveCortex::Error, openai_error_message)
   end
 
   private
+
+  def openai_content
+    openai_response["choices"][0]["message"]["content"]
+  rescue
+    nil
+  end
+
+  def openai_error_message
+    "Error from OpenAI. " + { response: openai_response }.to_json
+  end
 
   def openai_response
     @openai_response ||= openai_client.chat(parameters: {
@@ -22,10 +30,5 @@ class ActiveCortex::Generator::Text < ActiveCortex::Generator
         { role: "user", content: prompt }
       ],
     })
-  end
-
-  def error_message
-    openai_response["error"] || "Unknown error from OpenAI. " +
-      { response: openai_response }.to_json
   end
 end

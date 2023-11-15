@@ -5,8 +5,8 @@ http_interactions:
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Summarize:
-        ABC"}]}'
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Write
+        a short summary of The Great Gatsby"}]}'
     headers:
       Content-Type:
       - application/json
@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 Nov 2023 23:14:25 GMT
+      - Wed, 15 Nov 2023 11:22:25 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -40,7 +40,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '7722'
+      - '18179'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -52,48 +52,50 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '3499'
       X-Ratelimit-Remaining-Tokens:
-      - '89979'
+      - '89971'
       X-Ratelimit-Reset-Requests:
       - 17ms
       X-Ratelimit-Reset-Tokens:
-      - 14ms
+      - 18ms
       X-Request-Id:
-      - 2ad722ffbb0ff1c074d99dc873a3fbb3
+      - 2605d24686fe8fec81023fcfdb1b57a4
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=DiJZbrKpbgObF1.Hn83pPCtYQTUydQYe_1kLM2M1PFs-1699744465-0-AXB8q8QPN6v+wiJWHQY9m47E46fXQmiaoZW1lI9H2k7U+P043vxk/yTfE2+uNQGFEplGJ3M+ontsUuVg5JilqW0=;
-        path=/; expires=Sat, 11-Nov-23 23:44:25 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=B.jSd8l6WMJKZjCYANHcNcooEaWgEzdIxTATOpdwkBk-1700047345-0-AeTZqx+gZjvQfkMMQs8R8ThnRCZN1ZVK+Mnv3k7AIkTfcVVbVjpG89V6XeXkco6qE55IOqg7Nshn8cx4b5klkkk=;
+        path=/; expires=Wed, 15-Nov-23 11:52:25 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
+      - _cfuvid=g4GpO4ZSLubB8rEDue8cnu1IQULcwaWG9b.qJ5rh8_E-1700047345802-0-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 824a3b086b0a417d-LHR
+      - 82671d53f9ef732c-LHR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8JrT7Mvl8CzcrgVuL4sRF9AAVRdik",
+          "id": "chatcmpl-8L8G7hMbPngm2BQT8K71UamgeQGPI",
           "object": "chat.completion",
-          "created": 1699744457,
+          "created": 1700047327,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "ABC is a television network in the United States. It is one of the major broadcast networks and is known for airing a wide range of programming, including dramas, comedies, reality shows, and news. It has produced popular shows such as Grey's Anatomy, Modern Family, and The Bachelor. ABC also airs live events, such as award shows and sports broadcasts."
+                "content": "\"The Great Gatsby\" is a novel written by F. Scott Fitzgerald set in New York during the Roaring Twenties. It tells the story of Jay Gatsby, a wealthy man who throws extravagant parties in the hopes of winning back his lost love, Daisy Buchanan. The novel explores themes such as the corruption and excess of the American Dream, the illusion of wealth and social status, and the unfulfilled longing for love and acceptance. Through the eyes of the narrator, Nick Carraway, the novel depicts the tragic downfall of the characters and serves as a criticism of the society of the time. Overall, \"The Great Gatsby\" explores the hollowness of the American Dream and the emptiness felt by those who pursue it."
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
-            "prompt_tokens": 12,
-            "completion_tokens": 73,
-            "total_tokens": 85
+            "prompt_tokens": 16,
+            "completion_tokens": 150,
+            "total_tokens": 166
           }
         }
-  recorded_at: Sat, 11 Nov 2023 23:14:25 GMT
+  recorded_at: Wed, 15 Nov 2023 11:22:25 GMT
 recorded_with: VCR 6.2.0

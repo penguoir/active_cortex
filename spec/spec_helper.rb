@@ -32,7 +32,12 @@ end
 require 'webmock/rspec'
 require 'vcr'
 
-Dotenv.load!
+begin
+  Dotenv.load!
+rescue
+  puts "Did not load .env file"
+end
+
 ActiveCortex.config.openai_access_token = ENV.fetch("OPENAI_ACCESS_TOKEN")
 
 VCR.configure do |config|

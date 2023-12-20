@@ -2,7 +2,8 @@
 /doc/
 /log/*.log
 /pkg/
-/tmp/
+/checksums/
+/checkstyle.xml
 /spec/dummy/db/*.sqlite3
 /spec/dummy/db/*.sqlite3-*
 /spec/dummy/log/*.log

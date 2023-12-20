@@ -53,7 +53,7 @@ module ActiveCortex::Model
 
     def validate_arguments!(field_name, prompt, max_results, model)
       raise ArgumentError, "field_name must be a symbol or string" unless field_name.is_a?(Symbol) || field_name.is_a?(String)
-      raise ArgumentError, "prompt must be a proc" unless prompt.is_a?(Proc)
+      raise ArgumentError, "prompt must be a proc" unless prompt.is_a?(Proc) || prompt.is_a?(Symbol)
       raise ArgumentError, "max_results must be a number" unless max_results.nil? || max_results.is_a?(Integer)
       raise ArgumentError, "model must be a string" unless model.is_a?(String)
     end

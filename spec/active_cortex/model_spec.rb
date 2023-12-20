@@ -18,10 +18,13 @@ RSpec.describe ActiveCortex::Model do
       before do
         Book.ai_generated :summary,
           prompt: -> (book) { "Write a short summary of #{book.title}" }
+
+        Book.ai_generated :reviews, prompt: :generate_reviews_prompt
       end
 
       it "adds a generate function for the provided field" do
         expect(book).to respond_to(:generate_summary!)
+        expect(book).to respond_to(:generate_reviews!)
       end
     end
 
@@ -32,7 +35,7 @@ RSpec.describe ActiveCortex::Model do
         end.to raise_error(ArgumentError)
       end
 
-      it "raises an error if the prompt is not a proc" do
+      it "raises an error if the prompt is not a proc or function name" do
         expect do
           Book.ai_generated :summary, prompt: "Write a summary"
         end.to raise_error(ArgumentError)

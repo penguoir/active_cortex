@@ -20,7 +20,7 @@ RSpec.describe ActiveCortex::Generator::Boolean do
 
   context "when saving the generation" do
     it "saves the generation to the record", :vcr do
-      generator.save_generation(record: book, field_name: :completed)
+      generator.save_generation
       expect(book.completed).to be_a(TrueClass).or be_a(FalseClass)
     end
   end

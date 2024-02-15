@@ -3,7 +3,7 @@ class ActiveCortex::Generator::Boolean < ActiveCortex::Generator
     record.class.attribute_types[field_name.to_s].type == :boolean
   end
 
-  def save_generation(record:, field_name:)
+  def save_generation
     record.send("#{field_name}=", generation)
   end
 

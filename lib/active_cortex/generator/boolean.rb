@@ -28,7 +28,7 @@ class ActiveCortex::Generator::Boolean < ActiveCortex::Generator
   end
 
   def convert_to_boolean(content)
-    content = content.downcase.gsub(/[^a-z]/, "")
+    content = content&.downcase&.gsub(/[^a-z]/, "")
 
     case content
     when "yes", "true", "1"

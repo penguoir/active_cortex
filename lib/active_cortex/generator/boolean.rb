@@ -3,7 +3,7 @@ class ActiveCortex::Generator::Boolean < ActiveCortex::Generator
     record.class.attribute_types[field_name.to_s].type == :boolean
   end
 
-  def self.generate(record:, field_name:)
+  def save_generation(record:, field_name:)
     record.send("#{field_name}=", generation)
   end
 
@@ -14,10 +14,13 @@ class ActiveCortex::Generator::Boolean < ActiveCortex::Generator
   private
 
   def convert_to_boolean(content)
+    content = content.downcase
+      .gsub(/[^a-z]/, "")
+
     case content
-    when "Yes", "yes", "True", "true", "1"
+    when "yes", "true", "1"
       true
-    when "No", "no", "False", "false", "0"
+    when "no", "false", "0"
       false
     else
       raise ActiveCortex::Error, "Could not convert content to boolean: #{content}"
@@ -26,6 +29,8 @@ class ActiveCortex::Generator::Boolean < ActiveCortex::Generator
 
   def openai_content
     convert_to_boolean(openai_response["choices"][0]["message"]["content"])
+  rescue ActiveCortex::Error => e
+    raise e
   rescue
     nil
   end

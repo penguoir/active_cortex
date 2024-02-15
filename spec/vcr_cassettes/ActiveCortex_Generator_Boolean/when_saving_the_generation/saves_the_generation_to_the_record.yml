@@ -24,7 +24,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 15 Feb 2024 10:57:13 GMT
+      - Thu, 15 Feb 2024 11:00:23 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -40,7 +40,7 @@ http_interactions:
       Openai-Organization:
       - user-for53p7367c0cyalvfwzeegz
       Openai-Processing-Ms:
-      - '379'
+      - '348'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -58,35 +58,35 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 35ms
       X-Request-Id:
-      - req_39679fd9d7f5c7bd1b4558ff3398aff7
+      - req_b01f71551e533aa4c0f9a718f015ea54
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=gMR2W4Qvw1ZX1t.l0NWf31RzKnBzmv9hhc6CEoQxvtY-1707994633-1.0-AfzUv2txOqob2wYJUSONVmAAqQyeki9OtZ67NBrtJ3S/6Ux3xhaV4rSpaUEJftsFqxJa53YunPM0h2jhvXto8Uw=;
-        path=/; expires=Thu, 15-Feb-24 11:27:13 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=6mJIYgxqUnrOCGD4p0A37RWziC4FaS_..uZKkgGLRoE-1707994823-1.0-AQc7cMeFo9G4BzzCuSRenW2UM7VM1dUN0Z2rd6gIFisgw5BRJ6mVRLhbgUwyG46pSh0ZY6yfSm9L5pXXoUb8y6Q=;
+        path=/; expires=Thu, 15-Feb-24 11:30:23 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=Ilke3KoelM846T_vCtGWHhVsSbPZeTFWGGwbI9BjSrY-1707994633141-0.0-604800000;
+      - _cfuvid=9cfPGKnqNAoQBtKgS8LqkGi0BbIjRqvFlUgwRFIGNpE-1707994823512-0.0-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 855d0754fcee0749-MAN
+      - 855d0bfafae454c9-MAN
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8sTiSD2LySCTuk7wJPYcTMnKlogJm",
+          "id": "chatcmpl-8sTlX85RXu7qEI7KQAFQ7oN2qbE0s",
           "object": "chat.completion",
-          "created": 1707994632,
+          "created": 1707994823,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "Yes."
+                "content": "Yes"
               },
               "logprobs": null,
               "finish_reason": "stop"
@@ -94,10 +94,10 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 26,
-            "completion_tokens": 2,
-            "total_tokens": 28
+            "completion_tokens": 1,
+            "total_tokens": 27
           },
           "system_fingerprint": null
         }
-  recorded_at: Thu, 15 Feb 2024 10:57:13 GMT
+  recorded_at: Thu, 15 Feb 2024 11:00:23 GMT
 recorded_with: VCR 6.2.0

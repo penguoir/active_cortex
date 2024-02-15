@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_100814) do
   create_table "books", force: :cascade do |t|
     t.string "title", null: false
     t.string "summary"
+    t.boolean "completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

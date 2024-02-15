@@ -8,13 +8,17 @@ class ActiveCortex::Generator::Boolean < ActiveCortex::Generator
   end
 
   def generation
-    openai_content_as_boolean || raise(ActiveCortex::Error, openai_error_message)
+    if openai_content_as_boolean.nil?
+      raise(ActiveCortex::Error, openai_error_message) 
+    else
+      openai_content_as_boolean
+    end
   end
 
   private
 
   def openai_content_as_boolean
-    convert_to_boolean(openai_content)
+    @openai_content_as_boolean ||= convert_to_boolean(openai_content)
   end
 
   def openai_content

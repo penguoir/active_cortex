@@ -8,14 +8,27 @@ class ActiveCortex::Generator::Boolean < ActiveCortex::Generator
   end
 
   def generation
-    openai_content || raise(ActiveCortex::Error, openai_error_message)
+    openai_content_as_boolean || raise(ActiveCortex::Error, openai_error_message)
   end
 
   private
 
+  def openai_content_as_boolean
+    convert_to_boolean(openai_content)
+  end
+
+  def openai_content
+    openai_response["choices"][0]["message"]["content"]
+  rescue
+    nil
+  end
+
+  def openai_error_message
+    "Error from OpenAI. " + { response: openai_response }.to_json
+  end
+
   def convert_to_boolean(content)
-    content = content.downcase
-      .gsub(/[^a-z]/, "")
+    content = content.downcase.gsub(/[^a-z]/, "")
 
     case content
     when "yes", "true", "1"
@@ -25,18 +38,6 @@ class ActiveCortex::Generator::Boolean < ActiveCortex::Generator
     else
       raise ActiveCortex::Error, "Could not convert content to boolean: #{content}"
     end
-  end
-
-  def openai_content
-    convert_to_boolean(openai_response["choices"][0]["message"]["content"])
-  rescue ActiveCortex::Error => e
-    raise e
-  rescue
-    nil
-  end
-
-  def openai_error_message
-    "Error from OpenAI. " + { response: openai_response }.to_json
   end
 
   def openai_response
